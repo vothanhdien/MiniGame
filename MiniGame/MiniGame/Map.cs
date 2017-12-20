@@ -132,6 +132,16 @@ namespace MiniGame
                         matrix[i, j] = 1;
                 }
             }
+
+
+            for (int i = 1; i < rows - 1; i++)
+            {
+                for (int j = 1; j < cols -1 ; j++)
+                {
+                    if (matrix[i, j] == 1 && matrix[i - 1, j] == 0 && matrix[i + 1, j] == 0 && matrix[i, j - 1] == 0 && matrix[i, j + 1] == 0)
+                        matrix[i, j] = 0;
+                }
+            }
         }
 
         private void initMap(int[,] matrix)

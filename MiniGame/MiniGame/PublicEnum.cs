@@ -5,7 +5,5 @@ using System.Text;
 
 namespace MiniGame
 {
-    public class PublicEnum
-    {
-    }
+    public enum UnitTypeEnum { ZOMBIE, SCORPION, MUMMY, CHARACTER, TREASURE};
 }
