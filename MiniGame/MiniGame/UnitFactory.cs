@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,37 +25,36 @@ namespace MiniGame
                     {
                         tex.Add(Global.Content.Load<Texture2D>("zombies/" + i.ToString("00")));
                     }
-                    return new Zombies(left, top, tex);
+                    return new Zombie(left, top, tex);
                 case UnitTypeEnum.MUMMY:
                     tex = new List<Texture2D>();
                     for (int i = 0; i < 12; i++)
                     {
                         tex.Add(Global.Content.Load<Texture2D>("mummies/" + i.ToString("00")));
                     }
-                    return new Mummies(left, top, tex);
+                    return new Mummy(left, top, tex);
                 case UnitTypeEnum.SCORPION:
                     tex = new List<Texture2D>();
                     for (int i = 0; i < 12; i++)
                     {
                         tex.Add(Global.Content.Load<Texture2D>("scorpions/" + i.ToString("00")));
                     }
-                    return new Scorpions(left, top, tex);
+                    return new Scorpion(left, top, tex);
                 case UnitTypeEnum.CHARACTER:
                     tex = new List<Texture2D>();
                     for (int i = 0; i < 12; i++)
                     {
-                        tex.Add(Global.Content.Load<Texture2D>("scorpions/" + i.ToString("00")));
+                        tex.Add(Global.Content.Load<Texture2D>("player/" + i.ToString("00")));
                     }
                     //
-                    break;
+                    return Player.getInstance(left, top, tex);
                 case UnitTypeEnum.TREASURE:
                     tex = new List<Texture2D>();
-                    for (int i = 0; i < 12; i++)
-                    {
-                        tex.Add(Global.Content.Load<Texture2D>("scorpions/" + i.ToString("00")));
-                    }
+                    
+                    //tex.Add(Global.Content.Load<Texture2D>("scorpions/");
+                    
                     //
-                    break;
+                    return new Treasure(left, top, tex);
                 default:
                     return null;
             }

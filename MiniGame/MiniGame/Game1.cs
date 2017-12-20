@@ -19,6 +19,7 @@ namespace MiniGame
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Map map;
+        List<Unit> unitList = new List<Unit>();
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -50,6 +51,10 @@ namespace MiniGame
             // TODO: use this.Content to load your game content here
 
             map = new Map(0, 0, "map\\", 15, 20);
+
+            Unit tmp = UnitFactory.createInstance(1, 1, UnitTypeEnum.MUMMY);
+
+            unitList.Add(tmp);
         }
 
         /// <summary>
@@ -73,6 +78,12 @@ namespace MiniGame
                 this.Exit();
 
             // TODO: Add your update logic here
+            int n = unitList.Count;
+            for (int i = 0; i < n; i++)
+            {
+                unitList[i].Update(gameTime);
+            }
+
 
             base.Update(gameTime);
         }
@@ -86,9 +97,14 @@ namespace MiniGame
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            this.spriteBatch.Begin();
+            this.spriteBatch.Begin(SpriteSortMode.FrontToBack,BlendState.AlphaBlend);
 
             map.Draw(gameTime, spriteBatch);
+            int n = unitList.Count;
+            for(int  i =0; i< n; i++)
+            {
+                unitList[i].Draw(gameTime, spriteBatch);
+            }
 
             this.spriteBatch.End();
             base.Draw(gameTime);

@@ -64,12 +64,12 @@ namespace MiniGame
                         textureMap[r, c] = new Sprite2D(
                         _left + c * _width,
                         _top + r * _height,
-                        CreateListTexture(strResource + "wall"));
+                        CreateListTexture(strResource + "wall"),0.1f);
                     else
                         textureMap[r, c] = new Sprite2D(
                         _left + c * _width,
                         _top + r * _height,
-                        CreateListTexture(strResource + "road"));
+                        CreateListTexture(strResource + "road"),0.1f);
                 }
                     
         }

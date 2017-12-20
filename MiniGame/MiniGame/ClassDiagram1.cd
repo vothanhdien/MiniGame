@@ -52,43 +52,43 @@
   <Class Name="MiniGame.Player" Collapsed="true">
     <Position X="14.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Player.cs</FileName>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAABAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>unit\Player.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MiniGame.Unit" Collapsed="true">
     <Position X="12" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Unit.cs</FileName>
+      <HashCode>AAQAACAAAAAAAwAAAgAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>unit\Unit.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MiniGame.Treasure" Collapsed="true">
     <Position X="16" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Treasure.cs</FileName>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>unit\Treasure.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MiniGame.Mummy" Collapsed="true">
     <Position X="8.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Mummy.cs</FileName>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>unit\Mummy.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MiniGame.Zombie" Collapsed="true">
     <Position X="10.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAQAAAAAAAA=</HashCode>
-      <FileName>Zombie.cs</FileName>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>unit\Zombie.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MiniGame.Scorpion" Collapsed="true">
     <Position X="12.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Scorpion.cs</FileName>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>unit\Scorpion.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MiniGame.Camera" Collapsed="true">
@@ -143,7 +143,7 @@
   <Class Name="MiniGame.Game1" Collapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAEEAAAAAAAwAAAAAAAAAAAAAAAAgAAAAAAAAAAAQ=</HashCode>
+      <HashCode>AAQAEEAAAAAAAwAAAABAAAAAAAAAAAgAAAAAAAAAAAQ=</HashCode>
       <FileName>Game1.cs</FileName>
     </TypeIdentifier>
   </Class>
