@@ -18,7 +18,7 @@ namespace MiniGame
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
+        Map map;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -46,8 +46,10 @@ namespace MiniGame
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            Global.Content = this.Content;
             // TODO: use this.Content to load your game content here
+
+            map = new Map(0, 0, "map\\", 15, 20);
         }
 
         /// <summary>
@@ -84,7 +86,11 @@ namespace MiniGame
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            this.spriteBatch.Begin();
 
+            map.Draw(gameTime, spriteBatch);
+
+            this.spriteBatch.End();
             base.Draw(gameTime);
         }
     }

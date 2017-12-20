@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>map\road.jpg</Source>
+      <Name>map\road</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\map\road.xnb</Output>
+      <Time>2017-12-20T10:32:56.2183833+07:00</Time>
+    </Item>
+    <Item>
+      <Source>map\wall.jpg</Source>
+      <Name>map\wall</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\map\wall.xnb</Output>
+      <Time>2017-12-20T10:33:07.9995273+07:00</Time>
+    </Item>
+    <Item>
+      <Source>mummies\00.png</Source>
+      <Name>mummies\00</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\mummies\00.xnb</Output>
+      <Time>2017-12-20T09:45:47.4728263+07:00</Time>
+    </Item>
+    <Item>
+      <Source>mummies\01.png</Source>
+      <Name>mummies\01</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\mummies\01.xnb</Output>
+      <Time>2017-12-20T09:45:47.4884485+07:00</Time>
+    </Item>
+    <Item>
+      <Source>mummies\02.png</Source>
+      <Name>mummies\02</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\mummies\02.xnb</Output>
+      <Time>2017-12-20T09:45:47.4884485+07:00</Time>
+    </Item>
+    <Item>
+      <Source>mummies\03.png</Source>
+      <Name>mummies\03</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\mummies\03.xnb</Output>
+      <Time>2017-12-20T09:45:47.5040739+07:00</Time>
+    </Item>
+    <Item>
+      <Source>mummies\04.png</Source>
+      <Name>mummies\04</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\mummies\04.xnb</Output>
+      <Time>2017-12-20T09:45:47.5040739+07:00</Time>
+    </Item>
+    <Item>
+      <Source>mummies\05.png</Source>
+      <Name>mummies\05</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\mummies\05.xnb</Output>
+      <Time>2017-12-20T09:45:47.5040739+07:00</Time>
+    </Item>
+    <Item>
+      <Source>mummies\06.png</Source>
+      <Name>mummies\06</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\mummies\06.xnb</Output>
+      <Time>2017-12-20T09:45:47.5040739+07:00</Time>
+    </Item>
+    <Item>
+      <Source>mummies\07.png</Source>
+      <Name>mummies\07</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\mummies\07.xnb</Output>
+      <Time>2017-12-20T09:45:47.5040739+07:00</Time>
+    </Item>
+    <Item>
+      <Source>mummies\08.png</Source>
+      <Name>mummies\08</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\mummies\08.xnb</Output>
+      <Time>2017-12-20T09:45:47.5197009+07:00</Time>
+    </Item>
+    <Item>
+      <Source>mummies\09.png</Source>
+      <Name>mummies\09</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\mummies\09.xnb</Output>
+      <Time>2017-12-20T09:45:47.5197009+07:00</Time>
+    </Item>
+    <Item>
+      <Source>mummies\10.png</Source>
+      <Name>mummies\10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\mummies\10.xnb</Output>
+      <Time>2017-12-20T09:45:47.5197009+07:00</Time>
+    </Item>
+    <Item>
+      <Source>mummies\11.png</Source>
+      <Name>mummies\11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\mummies\11.xnb</Output>
+      <Time>2017-12-20T09:45:47.5197009+07:00</Time>
+    </Item>
+    <Item>
+      <Source>scorpions\00.png</Source>
+      <Name>scorpions\00</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\scorpions\00.xnb</Output>
+      <Time>2017-12-20T09:47:05.0962735+07:00</Time>
+    </Item>
+    <Item>
+      <Source>scorpions\01.png</Source>
+      <Name>scorpions\01</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\scorpions\01.xnb</Output>
+      <Time>2017-12-20T09:47:05.0962735+07:00</Time>
+    </Item>
+    <Item>
+      <Source>scorpions\02.png</Source>
+      <Name>scorpions\02</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\scorpions\02.xnb</Output>
+      <Time>2017-12-20T09:47:05.0962735+07:00</Time>
+    </Item>
+    <Item>
+      <Source>scorpions\03.png</Source>
+      <Name>scorpions\03</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\scorpions\03.xnb</Output>
+      <Time>2017-12-20T09:47:05.0962735+07:00</Time>
+    </Item>
+    <Item>
+      <Source>scorpions\04.png</Source>
+      <Name>scorpions\04</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\scorpions\04.xnb</Output>
+      <Time>2017-12-20T09:47:05.0962735+07:00</Time>
+    </Item>
+    <Item>
+      <Source>scorpions\05.png</Source>
+      <Name>scorpions\05</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\scorpions\05.xnb</Output>
+      <Time>2017-12-20T09:47:05.1118969+07:00</Time>
+    </Item>
+    <Item>
+      <Source>scorpions\06.png</Source>
+      <Name>scorpions\06</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\scorpions\06.xnb</Output>
+      <Time>2017-12-20T09:47:05.1118969+07:00</Time>
+    </Item>
+    <Item>
+      <Source>scorpions\07.png</Source>
+      <Name>scorpions\07</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\scorpions\07.xnb</Output>
+      <Time>2017-12-20T09:47:05.1118969+07:00</Time>
+    </Item>
+    <Item>
+      <Source>scorpions\08.png</Source>
+      <Name>scorpions\08</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\scorpions\08.xnb</Output>
+      <Time>2017-12-20T09:47:05.1118969+07:00</Time>
+    </Item>
+    <Item>
+      <Source>scorpions\09.png</Source>
+      <Name>scorpions\09</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\scorpions\09.xnb</Output>
+      <Time>2017-12-20T09:47:05.12751+07:00</Time>
+    </Item>
+    <Item>
+      <Source>scorpions\10.png</Source>
+      <Name>scorpions\10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\scorpions\10.xnb</Output>
+      <Time>2017-12-20T09:47:05.12751+07:00</Time>
+    </Item>
+    <Item>
+      <Source>scorpions\11.png</Source>
+      <Name>scorpions\11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\scorpions\11.xnb</Output>
+      <Time>2017-12-20T09:47:05.12751+07:00</Time>
+    </Item>
+    <Item>
+      <Source>zombies\00.png</Source>
+      <Name>zombies\00</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\zombies\00.xnb</Output>
+      <Time>2017-12-20T09:47:19.6815513+07:00</Time>
+    </Item>
+    <Item>
+      <Source>zombies\01.png</Source>
+      <Name>zombies\01</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\zombies\01.xnb</Output>
+      <Time>2017-12-20T09:47:19.6815513+07:00</Time>
+    </Item>
+    <Item>
+      <Source>zombies\02.png</Source>
+      <Name>zombies\02</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\zombies\02.xnb</Output>
+      <Time>2017-12-20T09:47:19.6971759+07:00</Time>
+    </Item>
+    <Item>
+      <Source>zombies\03.png</Source>
+      <Name>zombies\03</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\zombies\03.xnb</Output>
+      <Time>2017-12-20T09:47:19.6971759+07:00</Time>
+    </Item>
+    <Item>
+      <Source>zombies\04.png</Source>
+      <Name>zombies\04</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\zombies\04.xnb</Output>
+      <Time>2017-12-20T09:47:19.6971759+07:00</Time>
+    </Item>
+    <Item>
+      <Source>zombies\05.png</Source>
+      <Name>zombies\05</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\zombies\05.xnb</Output>
+      <Time>2017-12-20T09:47:19.6971759+07:00</Time>
+    </Item>
+    <Item>
+      <Source>zombies\06.png</Source>
+      <Name>zombies\06</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\zombies\06.xnb</Output>
+      <Time>2017-12-20T09:47:19.6971759+07:00</Time>
+    </Item>
+    <Item>
+      <Source>zombies\07.png</Source>
+      <Name>zombies\07</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\zombies\07.xnb</Output>
+      <Time>2017-12-20T09:47:19.7128161+07:00</Time>
+    </Item>
+    <Item>
+      <Source>zombies\08.png</Source>
+      <Name>zombies\08</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\zombies\08.xnb</Output>
+      <Time>2017-12-20T09:47:19.7128161+07:00</Time>
+    </Item>
+    <Item>
+      <Source>zombies\09.png</Source>
+      <Name>zombies\09</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\zombies\09.xnb</Output>
+      <Time>2017-12-20T09:47:19.7128161+07:00</Time>
+    </Item>
+    <Item>
+      <Source>zombies\10.png</Source>
+      <Name>zombies\10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\zombies\10.xnb</Output>
+      <Time>2017-12-20T09:47:19.7128161+07:00</Time>
+    </Item>
+    <Item>
+      <Source>zombies\11.png</Source>
+      <Name>zombies\11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\zombies\11.xnb</Output>
+      <Time>2017-12-20T09:47:19.7284263+07:00</Time>
+    </Item>
+    <Item>
+      <Source>player\00.png</Source>
+      <Name>player\00</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\player\00.xnb</Output>
+      <Time>2017-12-20T09:50:14.3550215+07:00</Time>
+    </Item>
+    <Item>
+      <Source>player\01.png</Source>
+      <Name>player\01</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\player\01.xnb</Output>
+      <Time>2017-12-20T09:50:14.3590219+07:00</Time>
+    </Item>
+    <Item>
+      <Source>player\02.png</Source>
+      <Name>player\02</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\player\02.xnb</Output>
+      <Time>2017-12-20T09:50:14.3630095+07:00</Time>
+    </Item>
+    <Item>
+      <Source>player\03.png</Source>
+      <Name>player\03</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\player\03.xnb</Output>
+      <Time>2017-12-20T09:50:14.3670116+07:00</Time>
+    </Item>
+    <Item>
+      <Source>player\04.png</Source>
+      <Name>player\04</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\player\04.xnb</Output>
+      <Time>2017-12-20T09:50:14.3711006+07:00</Time>
+    </Item>
+    <Item>
+      <Source>player\05.png</Source>
+      <Name>player\05</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\player\05.xnb</Output>
+      <Time>2017-12-20T09:50:14.3711006+07:00</Time>
+    </Item>
+    <Item>
+      <Source>player\06.png</Source>
+      <Name>player\06</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\player\06.xnb</Output>
+      <Time>2017-12-20T09:50:14.3711006+07:00</Time>
+    </Item>
+    <Item>
+      <Source>player\07.png</Source>
+      <Name>player\07</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\player\07.xnb</Output>
+      <Time>2017-12-20T09:50:14.3711006+07:00</Time>
+    </Item>
+    <Item>
+      <Source>player\08.png</Source>
+      <Name>player\08</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\player\08.xnb</Output>
+      <Time>2017-12-20T09:50:14.3711006+07:00</Time>
+    </Item>
+    <Item>
+      <Source>player\09.png</Source>
+      <Name>player\09</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\player\09.xnb</Output>
+      <Time>2017-12-20T09:50:14.3867268+07:00</Time>
+    </Item>
+    <Item>
+      <Source>player\10.png</Source>
+      <Name>player\10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\player\10.xnb</Output>
+      <Time>2017-12-20T09:50:14.3867268+07:00</Time>
+    </Item>
+    <Item>
+      <Source>player\11.png</Source>
+      <Name>player\11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\player\11.xnb</Output>
+      <Time>2017-12-20T09:50:14.3867268+07:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{8EE91D1B-A8FD-4297-B40E-E356FF419225}</ContentProjectGUID>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGameContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T16:22:30+07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T16:22:30+07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2017-12-05T05:45:48.2084306+07:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

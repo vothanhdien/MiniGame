@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace MiniGame
     {
 
         private int[,] logicMap;
-        Sprite2D[,] TextureMap;
+        Sprite2D[,] textureMap;
 
         int _rows;
         int _cols;
@@ -45,22 +46,32 @@ namespace MiniGame
 
             logicMap = createMap(_rows, _cols);
 
-            Texture2D tmp = Global.Content.Load<Texture2D>(strResource + "00_00");
-            _height = tmp.Height;
-            _width = tmp.Width;
+            //Texture2D tmp = Global.Content.Load<Texture2D>(strResource + "00_00");
+            //_height = tmp.Height;
+            //_width = tmp.Width;
+            _height = _width = 32;
 
             loadTexture(strResource);
         }
         public void loadTexture(string strResource)
         {
 
-            mapMatrix = new MySprite2D[_rows, _cols];
+            textureMap = new Sprite2D[_rows, _cols];
             for (int r = 0; r < _rows; r++)
                 for (int c = 0; c < _cols; c++)
-                    mapMatrix[r, c] = new MySprite2D(
+                {
+                    if(logicMap[r,c]==0)
+                        textureMap[r, c] = new Sprite2D(
                         _left + c * _width,
                         _top + r * _height,
-                        CreateListTexture(strResource + r.ToString("00") + "_" + c.ToString("00")));
+                        CreateListTexture(strResource + "wall"));
+                    else
+                        textureMap[r, c] = new Sprite2D(
+                        _left + c * _width,
+                        _top + r * _height,
+                        CreateListTexture(strResource + "road"));
+                }
+                    
         }
 
         private List<Texture2D> CreateListTexture(string str)
@@ -71,7 +82,29 @@ namespace MiniGame
         }
 
 
+        public override void Update(GameTime gameTime)
+        {
+            //base.Update(gameTime);
+            for (int r = 0; r < _rows; r++)
+                for (int c = 0; c < _cols; c++)
+                    textureMap[r, c].Update(gameTime);
+        }
 
+
+        public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+        {
+            //base.Draw(gameTime, spriteBatch);
+            for (int r = 0; r < _rows; r++)
+                for (int c = 0; c < _cols; c++)
+                    if (IsVisible(r, c))
+                        textureMap[r, c].Draw(gameTime, spriteBatch);
+
+        }
+
+        private bool IsVisible(int r, int c)
+        {
+            return true;
+        }
 
 
         #region create logic map
@@ -86,9 +119,11 @@ namespace MiniGame
 
         private void finishMap(int[,] matrix)
         {
-            for (int i = 0; i < Math.Sqrt(matrix.Length); i++)
+            int rows = matrix.GetLength(0);
+            int cols = matrix.GetLength(1);
+            for (int i = 0; i < rows; i++)
             {
-                for (int j = 0; j < Math.Sqrt(matrix.Length); j++)
+                for (int j = 0; j < cols; j++)
                 {
                     //3 la tuong nhu luc khoi tao
                     if (matrix[i, j] == 0 || matrix[i, j] > 2)
@@ -121,7 +156,8 @@ namespace MiniGame
 
         private void createWay(int[,] matrix, int[] entrance, int[] exit)
         {
-            int size = (int)Math.Sqrt(matrix.Length);
+            int rows = matrix.GetLength(0);
+            int cols = matrix.GetLength(1);
             int[] currentIn = (int[])entrance.Clone();
             int[] currentOut = (int[])exit.Clone();
             int[] dx = { 0, -1, 0, 1 };
@@ -141,7 +177,7 @@ namespace MiniGame
                 {
                     int x = currentIn[0] + dx[i];
                     int y = currentIn[1] + dy[i];
-                    if (x >= size || x < 0 || y >= size || y < 0)
+                    if (x >= rows || x < 0 || y >= cols || y < 0)
                         continue;
                     else
                     {
@@ -177,7 +213,7 @@ namespace MiniGame
                 {
                     int x = currentOut[0] + dx[i];
                     int y = currentOut[1] + dy[i];
-                    if (x >= size || x < 0 || y >= size || y < 0)
+                    if (x >= rows || x < 0 || y >= cols || y < 0)
                         continue;
                     else
                     {
@@ -217,26 +253,7 @@ namespace MiniGame
                 }
             }
         }
-
-        private void printMap(int[,] matrix)
-        {
-            for (int i = 0; i < Math.Sqrt(matrix.Length); i++)
-            {
-                for (int j = 0; j < Math.Sqrt(matrix.Length); j++)
-                {
-                    if (matrix[i, j] < 0)
-                        Console.Write(" O");
-                    else if (matrix[i, j] == 0)
-                        Console.Write(" #");
-                    else if (matrix[i, j] == 4)
-                        Console.Write(" H");
-                    else
-                        Console.Write("  ");
-
-                }
-                Console.WriteLine();
-            }
-        }
+        
 
         private int[,] createNewMap(int rows, int cols)
         {
