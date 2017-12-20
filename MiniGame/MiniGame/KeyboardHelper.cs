@@ -20,7 +20,9 @@ namespace MiniGame
 
         internal bool IsKeyPressed(Keys key)
         {
-            return CurrentState.IsKeyDown(key);
+            if (PreviousState.IsKeyDown(key) && CurrentState.IsKeyUp(key))
+                return CurrentState.IsKeyUp(key);
+                return false;
         }
     }
 }

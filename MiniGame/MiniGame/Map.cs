@@ -21,6 +21,10 @@ namespace MiniGame
 
         protected float _height;//rows * height 1 phan tu
         protected float _width;//col * width 1 phan tu
+
+        protected Vector2 entrance = Vector2.Zero;
+        protected Vector2 exit = Vector2.Zero;
+
         public float Height
         {
             get
@@ -60,18 +64,18 @@ namespace MiniGame
             for (int r = 0; r < _rows; r++)
                 for (int c = 0; c < _cols; c++)
                 {
-                    if(logicMap[r,c]==0)
+                    if (logicMap[r, c] == 0)
                         textureMap[r, c] = new Sprite2D(
                         _left + c * _width,
                         _top + r * _height,
-                        CreateListTexture(strResource + "wall"),0.1f);
+                        CreateListTexture(strResource + "wall"), 0.1f);
                     else
                         textureMap[r, c] = new Sprite2D(
                         _left + c * _width,
                         _top + r * _height,
-                        CreateListTexture(strResource + "road"),0.1f);
+                        CreateListTexture(strResource + "road"), 0.1f);
                 }
-                    
+
         }
 
         private List<Texture2D> CreateListTexture(string str)
@@ -106,6 +110,60 @@ namespace MiniGame
             return true;
         }
 
+        public Vector2 getEntrance()
+        {
+            if (entrance == Vector2.Zero)
+            {
+                for (int i = 1; i < _rows - 1; i++)
+                {
+                    if (logicMap[i, _cols - 1] == 1)
+                    {
+                        entrance.X = _cols - 1;
+                        entrance.Y = i;
+                        break;
+                    }
+                }
+            }
+            return entrance;
+        }
+        public Vector2 getExit()
+        {
+            if (exit == Vector2.Zero)
+            {
+                for (int i = 1; i < _rows - 1; i++)
+                {
+                    if (logicMap[i, 0] == 1)
+                    {
+                        exit.X = 0;
+                        exit.Y = i;
+                        break;
+                    }
+                }
+
+            }
+            return exit;
+        }
+
+        public bool canGo(int col, int row)
+        {
+            if (row < 0 || row >= _rows || col < 0 || col >= _cols)
+                return false;
+            return logicMap[row, col] == 1;
+        }
+
+        public List<Vector2> getListRoad()
+        {
+            List<Vector2> ret = new List<Vector2>();
+            for (int i = 1; i < _rows-1; i++)
+            {
+                for (int j = 1; j < _cols - 1; j++)
+                {
+                    if (logicMap[i, j] == 1)
+                        ret.Add(new Vector2(j, i));
+                }
+            }
+            return ret;
+        }
 
         #region create logic map
         private int[,] createMap(int rows, int cols)

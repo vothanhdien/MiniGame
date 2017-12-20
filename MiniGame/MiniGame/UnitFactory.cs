@@ -9,52 +9,31 @@ namespace MiniGame
 {
     public class UnitFactory : AbstractFactory
     {
-        private static List<Texture2D> tex;
+        private static List<Texture2D> texs;
         public static Unit createInstance(Vector2 pos, UnitTypeEnum type)
         {
             return createInstance(pos.X, pos.Y, type);
         }
 
-        public static Unit createInstance(float left, float top, UnitTypeEnum type)
+        public static Unit createInstance(float X, float Y, UnitTypeEnum type)
         {
             switch (type)
             {
                 case UnitTypeEnum.ZOMBIE:
-                    tex = new List<Texture2D>();
-                    for (int i = 0; i < 12; i++)
-                    {
-                        tex.Add(Global.Content.Load<Texture2D>("zombies/" + i.ToString("00")));
-                    }
-                    return new Zombie(left, top, tex);
+                    texs = Global.loadTexture("Zombies");
+                    return new Zombie(X, Y, texs);
                 case UnitTypeEnum.MUMMY:
-                    tex = new List<Texture2D>();
-                    for (int i = 0; i < 12; i++)
-                    {
-                        tex.Add(Global.Content.Load<Texture2D>("mummies/" + i.ToString("00")));
-                    }
-                    return new Mummy(left, top, tex);
+                    texs = Global.loadTexture("Mummies");
+                    return new Mummy(X, Y, texs);
                 case UnitTypeEnum.SCORPION:
-                    tex = new List<Texture2D>();
-                    for (int i = 0; i < 12; i++)
-                    {
-                        tex.Add(Global.Content.Load<Texture2D>("scorpions/" + i.ToString("00")));
-                    }
-                    return new Scorpion(left, top, tex);
+                    texs = Global.loadTexture("Scorpions");
+                    return new Scorpion(X, Y, texs);
                 case UnitTypeEnum.CHARACTER:
-                    tex = new List<Texture2D>();
-                    for (int i = 0; i < 12; i++)
-                    {
-                        tex.Add(Global.Content.Load<Texture2D>("player/" + i.ToString("00")));
-                    }
-                    //
-                    return Player.getInstance(left, top, tex);
+                    texs = Global.loadTexture("Player");
+                    return Player.getInstance(X, Y, texs);
                 case UnitTypeEnum.TREASURE:
-                    tex = new List<Texture2D>();
-                    
-                    //tex.Add(Global.Content.Load<Texture2D>("scorpions/");
-                    
-                    //
-                    return new Treasure(left, top, tex);
+                    texs = Global.loadTexture("Treasure");
+                    return new Treasure(X, Y, texs);
                 default:
                     return null;
             }

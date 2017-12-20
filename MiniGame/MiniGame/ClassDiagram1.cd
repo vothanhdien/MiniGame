@@ -31,21 +31,21 @@
   <Class Name="MiniGame.AbstactModel" Collapsed="true">
     <Position X="2.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAEgAAAAAAAAAAAAAAAAAEAAAARAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAEgAAAAAAAAAAAAAAAAAEAAAARAAAEAA=</HashCode>
       <FileName>AbstactModel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MiniGame.Sprite2D" Collapsed="true">
     <Position X="2.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQIAAAABECKEgBAAAEAAEAAABAIAAggCAAAwAAAAAA=</HashCode>
+      <HashCode>AAQIAAAABECKEgBAAAEAAEAAABAIAAggCAAAwAAAEAA=</HashCode>
       <FileName>Sprite2D.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MiniGame.Map" Collapsed="true">
     <Position X="14" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgQACAAABACCEgCBAQAAAkgAEBQAAAgAAAAAAAQAAAA=</HashCode>
+      <HashCode>AgQACAAABACCEgCBAQAAAkgAEBQAAAgBAAAAECQIAAE=</HashCode>
       <FileName>Map.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -59,7 +59,7 @@
   <Class Name="MiniGame.Unit" Collapsed="true">
     <Position X="12" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAACAAAAAAAwAAAgAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAAgAAAgAAAAAAAAAAAAAAACQAAAAgEAQ=</HashCode>
       <FileName>unit\Unit.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -115,7 +115,7 @@
   <Class Name="MiniGame.Global" Collapsed="true">
     <Position X="0.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAgAAAAAAAAABAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAABgAAAAAAAAABAAAAAQCGAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Global.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -136,15 +136,22 @@
   <Class Name="MiniGame.UnitFactory" Collapsed="true">
     <Position X="0.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAIAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAABAAAAAAAAAAAA=</HashCode>
       <FileName>UnitFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MiniGame.Game1" Collapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAEEAAAAAAAwAAAABAAAAAAAAAAAgAAAAAAAAAAAQ=</HashCode>
+      <HashCode>AAQAEEAAAAAAAwAAAABAAAAAAAAAAAgBAAAAAAAAAAQ=</HashCode>
       <FileName>Game1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiniGame.Config" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEgIAAEAAAAAAAAAAAAIAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Config.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

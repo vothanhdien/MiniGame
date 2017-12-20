@@ -48,3 +48,15 @@ Content\player\08.xnb
 Content\player\09.xnb
 Content\player\10.xnb
 Content\player\11.xnb
+Content\treasure\00.xnb
+Content\treasure\01.xnb
+Content\treasure\02.xnb
+Content\treasure\03.xnb
+Content\treasure\04.xnb
+Content\treasure\05.xnb
+Content\treasure\06.xnb
+Content\treasure\07.xnb
+Content\treasure\08.xnb
+Content\treasure\09.xnb
+Content\treasure\10.xnb
+Content\treasure\11.xnb

@@ -9,9 +9,9 @@ namespace MiniGame
 {
     public abstract class AbstactModel
     {
-        private int state;
+        private UnitStateEnum state;
 
-        public int State
+        public UnitStateEnum State
         {
             get
             {
@@ -33,5 +33,10 @@ namespace MiniGame
         public virtual bool IsSelected(Vector2 pos) { return false; }
 
         public virtual void Select() { }
+
+        public virtual void transact(float letf, float top)
+        {
+
+        }
     }
 }

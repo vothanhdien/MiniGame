@@ -146,7 +146,7 @@ namespace MiniGame
 
         public override void Select()
         {
-            this.State = (State + 1) % 2;
+            //this.State = (State + 1) % 2;
         }
 
 
@@ -160,16 +160,16 @@ namespace MiniGame
                 int di = (_iTexture + 1) % nTexturePerType;
                 switch (State)
                 {
-                    case 0:
+                    case UnitStateEnum.MOVEFORWAR:
                         _iTexture = di;
                         break;
-                    case 1:
+                    case UnitStateEnum.MOVELEFT:
                         _iTexture = di + nTexturePerType * 1;
                         break;
-                    case 2:
+                    case UnitStateEnum.MOVERIGHT:
                         _iTexture = di + nTexturePerType * 2;
                         break;
-                    case 3:
+                    case UnitStateEnum.MOVEBACK:
                         _iTexture = di + nTexturePerType * 3;
                         break;
                 }
@@ -187,6 +187,21 @@ namespace MiniGame
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch, float scale)
         {
             spriteBatch.Draw(this.Textures[_iTexture], new Rectangle((int)Left, (int)Top, (int)(Width / scale), (int)(Height / scale)), null, Color, 0f, Vector2.Zero, SpriteEffects.None, _depth);
+        }
+
+        public override void transact(float left, float top)
+        {
+            if (top > Top)
+                State = UnitStateEnum.MOVEFORWAR;
+            if (top < Top)
+                State = UnitStateEnum.MOVEBACK;
+            if (left > Left)
+                State = UnitStateEnum.MOVERIGHT;
+            if (left < Left)
+                State = UnitStateEnum.MOVELEFT;
+            this.Top = top;
+            this.Left = left;
+            base.transact(top, left);
         }
     }
 }

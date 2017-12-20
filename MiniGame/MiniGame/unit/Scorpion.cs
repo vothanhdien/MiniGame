@@ -9,12 +9,10 @@ namespace MiniGame
 {
     public class Scorpion : Unit
     {
-        public Scorpion(float left, float top, List<Texture2D> textures, float depth = 0.3f)
+        public Scorpion(float left, float top, List<Texture2D> textures, float depth = 0.3F) : base(left, top, textures, depth)
         {
-            
-            _model = new Sprite2D(left, top, textures, depth);
-
         }
+
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);

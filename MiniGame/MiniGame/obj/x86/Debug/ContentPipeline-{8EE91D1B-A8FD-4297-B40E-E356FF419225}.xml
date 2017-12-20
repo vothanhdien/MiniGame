@@ -451,6 +451,114 @@
       <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\player\11.xnb</Output>
       <Time>2017-12-20T09:50:14.3867268+07:00</Time>
     </Item>
+    <Item>
+      <Source>treasure\00.png</Source>
+      <Name>treasure\00</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\00.xnb</Output>
+      <Time>2017-12-21T02:32:29.3341711+07:00</Time>
+    </Item>
+    <Item>
+      <Source>treasure\01.png</Source>
+      <Name>treasure\01</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\01.xnb</Output>
+      <Time>2017-12-21T02:33:21.1192169+07:00</Time>
+    </Item>
+    <Item>
+      <Source>treasure\02.png</Source>
+      <Name>treasure\02</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\02.xnb</Output>
+      <Time>2017-12-21T02:33:04.3286283+07:00</Time>
+    </Item>
+    <Item>
+      <Source>treasure\03.png</Source>
+      <Name>treasure\03</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\03.xnb</Output>
+      <Time>2017-12-21T02:23:02.5344022+07:00</Time>
+    </Item>
+    <Item>
+      <Source>treasure\04.png</Source>
+      <Name>treasure\04</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\04.xnb</Output>
+      <Time>2017-12-21T02:23:02.5464662+07:00</Time>
+    </Item>
+    <Item>
+      <Source>treasure\05.png</Source>
+      <Name>treasure\05</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\05.xnb</Output>
+      <Time>2017-12-21T02:23:02.5584517+07:00</Time>
+    </Item>
+    <Item>
+      <Source>treasure\06.png</Source>
+      <Name>treasure\06</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\06.xnb</Output>
+      <Time>2017-12-21T02:23:02.759774+07:00</Time>
+    </Item>
+    <Item>
+      <Source>treasure\07.png</Source>
+      <Name>treasure\07</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\07.xnb</Output>
+      <Time>2017-12-21T02:23:02.779812+07:00</Time>
+    </Item>
+    <Item>
+      <Source>treasure\08.png</Source>
+      <Name>treasure\08</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\08.xnb</Output>
+      <Time>2017-12-21T02:23:02.7990236+07:00</Time>
+    </Item>
+    <Item>
+      <Source>treasure\09.png</Source>
+      <Name>treasure\09</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\09.xnb</Output>
+      <Time>2017-12-21T02:23:03.0284565+07:00</Time>
+    </Item>
+    <Item>
+      <Source>treasure\10.png</Source>
+      <Name>treasure\10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\10.xnb</Output>
+      <Time>2017-12-21T02:23:03.0504729+07:00</Time>
+    </Item>
+    <Item>
+      <Source>treasure\11.png</Source>
+      <Name>treasure\11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\11.xnb</Output>
+      <Time>2017-12-21T02:23:03.071536+07:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{8EE91D1B-A8FD-4297-B40E-E356FF419225}</ContentProjectGUID>

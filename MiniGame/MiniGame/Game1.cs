@@ -20,6 +20,7 @@ namespace MiniGame
         SpriteBatch spriteBatch;
         Map map;
         List<Unit> unitList = new List<Unit>();
+        Unit player = null;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -47,14 +48,23 @@ namespace MiniGame
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            this.IsMouseVisible = true;
             Global.Content = this.Content;
+            Config.Instance.Load();
             // TODO: use this.Content to load your game content here
 
             map = new Map(0, 0, "map\\", 15, 20);
 
-            Unit tmp = UnitFactory.createInstance(1, 1, UnitTypeEnum.MUMMY);
+            Unit tmp = UnitFactory.createInstance(2, 1, UnitTypeEnum.MUMMY);
+
+            player = UnitFactory.createInstance(map.getEntrance(), UnitTypeEnum.CHARACTER);
 
             unitList.Add(tmp);
+            unitList.Add(UnitFactory.createInstance(3,1,UnitTypeEnum.TREASURE));
+            unitList.Add(UnitFactory.createInstance(8, 10, UnitTypeEnum.TREASURE));
+            unitList.Add(UnitFactory.createInstance(18, 10, UnitTypeEnum.TREASURE));
+            unitList.Add(UnitFactory.createInstance(5, 5, UnitTypeEnum.SCORPION));
+            unitList.Add(UnitFactory.createInstance(13, 9, UnitTypeEnum.ZOMBIE));
         }
 
         /// <summary>
@@ -76,6 +86,38 @@ namespace MiniGame
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
+            Global.keyboardHelper.Update(gameTime);
+            Global.mouseHelper.Update(gameTime);
+
+            if (Global.keyboardHelper.IsKeyPressed(Keys.A))
+            {
+                player.setState(UnitStateEnum.MOVELEFT);
+                if (map.canGo((int)player.LogicX - 1, (int)player.LogicY))
+                    player.transact(player.LogicX - 1, player.LogicY);
+
+            } else if (Global.keyboardHelper.IsKeyPressed(Keys.D))
+            {
+                player.setState(UnitStateEnum.MOVERIGHT);
+                if (map.canGo((int)player.LogicX + 1, (int)player.LogicY))
+                    player.transact(player.LogicX + 1, player.LogicY );
+            }
+            else if (Global.keyboardHelper.IsKeyPressed(Keys.W))
+            {
+                player.setState(UnitStateEnum.MOVEBACK);
+                if (map.canGo((int)player.LogicX, (int)player.LogicY - 1))
+                    player.transact(player.LogicX, player.LogicY - 1);
+            }
+            else if (Global.keyboardHelper.IsKeyPressed(Keys.S))
+            {
+                player.setState(UnitStateEnum.MOVEFORWAR);
+                if (map.canGo((int)player.LogicX, (int)player.LogicY + 1))
+                    player.transact(player.LogicX , player.LogicY + 1);
+            }
+
+            //Win game
+            Vector2 exit = map.getExit();
+            if (player.LogicX == exit.X && player.LogicY == exit.Y)
+                Window.Title = "Win";
 
             // TODO: Add your update logic here
             int n = unitList.Count;
@@ -83,8 +125,9 @@ namespace MiniGame
             {
                 unitList[i].Update(gameTime);
             }
+            player.Update(gameTime);
 
-
+            
             base.Update(gameTime);
         }
 
@@ -105,6 +148,8 @@ namespace MiniGame
             {
                 unitList[i].Draw(gameTime, spriteBatch);
             }
+
+            player.Draw(gameTime, spriteBatch);
 
             this.spriteBatch.End();
             base.Draw(gameTime);

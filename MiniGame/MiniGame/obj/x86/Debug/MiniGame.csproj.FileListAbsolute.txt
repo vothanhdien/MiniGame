@@ -64,3 +64,17 @@ C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame
 C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\obj\x86\Debug\MiniGame.exe
 C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\obj\x86\Debug\MiniGame.pdb
+C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Newtonsoft.Json.dll
+C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Newtonsoft.Json.xml
+C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\00.xnb
+C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\01.xnb
+C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\02.xnb
+C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\03.xnb
+C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\04.xnb
+C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\05.xnb
+C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\06.xnb
+C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\07.xnb
+C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\08.xnb
+C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\09.xnb
+C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\10.xnb
+C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\11.xnb

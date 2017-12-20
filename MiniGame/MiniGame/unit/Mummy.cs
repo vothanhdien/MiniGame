@@ -9,16 +9,18 @@ namespace MiniGame
 {
     public class Mummy : Unit
     {
-        public Mummy(float left, float top, List<Texture2D> textures, float depth = 0.3f)
+        public Mummy(float left, float top, List<Texture2D> textures, float depth = 0.3F) : base(left, top, textures, depth)
         {
-            this.logicCol = top;
-            this.logicRow = left;
-
-
-
-            _model = new Sprite2D(logicCol*32, logicRow*32, textures, depth);
-            
         }
+
+        //public Mummy(float left, float top, List<Texture2D> textures, float depth = 0.3f)
+        //{
+        //    this.LogicX = left;
+        //    this.LogicY = top;
+
+        //    _model = new Sprite2D(LogicX*32, LogicY*32, textures, depth);
+
+        //}
 
         public override void Update(GameTime gameTime)
         {

@@ -10,10 +10,47 @@ namespace MiniGame
     public class Unit : GameVisibleEntity
     {
         
-        protected float logicRow,logicCol;
+        private float logicX,logicY;
         protected AbstactModel _model;
         float t = 0;
         float dt = 0.25f;
+        #region properties
+        public float LogicX
+        {
+            get
+            {
+                return logicX;
+            }
+
+            set
+            {
+                logicX = value;
+            }
+        }
+
+        public float LogicY
+        {
+            get
+            {
+                return logicY;
+            }
+
+            set
+            {
+                logicY = value;
+            }
+        }
+        #endregion
+
+        public Unit(float left, float top, List<Texture2D> textures, float depth = 0.3f)
+        {
+            this.LogicX = left;
+            this.LogicY = top;
+
+            _model = new Sprite2D(LogicX * Global.TEXTURE_WIDTH, LogicY * Global.TEXTURE_WIDTH, textures, depth);
+
+        }
+
         public override void Update(GameTime gameTime)
         {
             
@@ -29,5 +66,25 @@ namespace MiniGame
             _model.Draw(gameTime, spriteBatch);
             base.Draw(gameTime, spriteBatch);
         }
+
+        public void transact(Vector2 newpos)
+        {
+            transact(newpos.X, newpos.Y);
+        }
+
+        public virtual void transact(float X, float Y)
+        {
+            
+            LogicX = X;
+            LogicY = Y;
+            _model.transact(logicX * 32, logicY * 32);
+        }
+
+        public virtual void setState(UnitStateEnum state)
+        {
+            _model.State = state;
+        }
+
+
     }
 }
