@@ -22,6 +22,7 @@ namespace MiniGame
         List<Unit> monsterList = new List<Unit>();
         List<Treasure> treasureList = new List<Treasure>();
         Player player = null;
+        GameStateEnum currentGameState = GameStateEnum.GAME_PLAYING;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -66,9 +67,12 @@ namespace MiniGame
             treasureList.Add((Treasure)UnitFactory.createInstance(3,1,UnitTypeEnum.TREASURE));
             treasureList.Add((Treasure)UnitFactory.createInstance(8, 10, UnitTypeEnum.TREASURE));
             treasureList.Add((Treasure)UnitFactory.createInstance(18, 10, UnitTypeEnum.TREASURE));
-            treasureList.Add((Treasure)UnitFactory.createInstance(4,7, UnitTypeEnum.TREASURE));
-            treasureList.Add((Treasure)UnitFactory.createInstance(5, 18, UnitTypeEnum.TREASURE));
-            treasureList.Add((Treasure)UnitFactory.createInstance(7, 15, UnitTypeEnum.TREASURE));
+            treasureList.Add((Treasure)UnitFactory.createInstance(4, 7, UnitTypeEnum.TREASURE));
+            treasureList.Add((Treasure)UnitFactory.createInstance(5, 12, UnitTypeEnum.TREASURE));
+            treasureList.Add((Treasure)UnitFactory.createInstance(7, 11, UnitTypeEnum.TREASURE));
+            treasureList.Add((Treasure)UnitFactory.createInstance(4, 1, UnitTypeEnum.TREASURE));
+            treasureList.Add((Treasure)UnitFactory.createInstance(5, 1, UnitTypeEnum.TREASURE));
+            treasureList.Add((Treasure)UnitFactory.createInstance(7, 10, UnitTypeEnum.TREASURE));
         }
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
@@ -86,9 +90,22 @@ namespace MiniGame
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
+
+
+            if(currentGameState == GameStateEnum.GAME_PAUSE || currentGameState == GameStateEnum.GAME_END)
+            {
+                Window.Title += " all step " + player.TotalStep + " treasuse" + player.TreaseList.Count;
+                return;
+            }
+
+            Global.playerPos.X = player.LogicX;
+            Global.playerPos.Y = player.LogicY;
+
+
             Global.keyboardHelper.Update(gameTime);
             Global.mouseHelper.Update(gameTime);
 
@@ -129,6 +146,7 @@ namespace MiniGame
                 monsterList[i].Update(gameTime);
                 if (monsterList[i].isOverridePlayer(player.LogicX, player.LogicY)){
                     Window.Title = "you die";
+                    currentGameState = GameStateEnum.GAME_END;
                 }
             }
             player.Update(gameTime);

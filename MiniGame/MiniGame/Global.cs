@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Content;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,8 @@ namespace MiniGame
         public static string CONFIG_DP = "config.json";
         public static string APP_PATH = getpath();
         public static float TEXTURE_WIDTH = 32;
+
+        public static Vector2 playerPos = Vector2.Zero;
 
         private static string getpath()
         {

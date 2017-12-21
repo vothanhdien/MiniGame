@@ -13,6 +13,8 @@ namespace MiniGame
 
         private List<Treasure> treaseList = new List<Treasure>();
 
+        private int totalStep = 0;
+
         public List<Treasure> TreaseList
         {
             get
@@ -23,6 +25,19 @@ namespace MiniGame
             set
             {
                 treaseList = value;
+            }
+        }
+
+        public int TotalStep
+        {
+            get
+            {
+                return totalStep;
+            }
+
+            set
+            {
+                totalStep = value;
             }
         }
 
@@ -66,6 +81,12 @@ namespace MiniGame
             base.Draw(gameTime, spriteBatch);
         }
 
-        
+        public override void transact(float X, float Y)
+        {
+            TotalStep++;
+            base.transact(X, Y);
+        }
+
+
     }
 }
