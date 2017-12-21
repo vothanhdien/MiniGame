@@ -19,8 +19,9 @@ namespace MiniGame
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Map map;
-        List<Unit> unitList = new List<Unit>();
-        Unit player = null;
+        List<Unit> monsterList = new List<Unit>();
+        List<Treasure> treasureList = new List<Treasure>();
+        Player player = null;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -55,18 +56,20 @@ namespace MiniGame
 
             map = new Map(0, 0, "map\\", 15, 20);
 
-            Unit tmp = UnitFactory.createInstance(2, 1, UnitTypeEnum.MUMMY);
+            
 
-            player = UnitFactory.createInstance(map.getEntrance(), UnitTypeEnum.CHARACTER);
+            player = (Player)UnitFactory.createInstance(map.getEntrance(), UnitTypeEnum.CHARACTER);
 
-            unitList.Add(tmp);
-            unitList.Add(UnitFactory.createInstance(3,1,UnitTypeEnum.TREASURE));
-            unitList.Add(UnitFactory.createInstance(8, 10, UnitTypeEnum.TREASURE));
-            unitList.Add(UnitFactory.createInstance(18, 10, UnitTypeEnum.TREASURE));
-            unitList.Add(UnitFactory.createInstance(5, 5, UnitTypeEnum.SCORPION));
-            unitList.Add(UnitFactory.createInstance(13, 9, UnitTypeEnum.ZOMBIE));
+            monsterList.Add(UnitFactory.createInstance(2, 1, UnitTypeEnum.MUMMY));
+            monsterList.Add(UnitFactory.createInstance(5, 5, UnitTypeEnum.SCORPION));
+            monsterList.Add(UnitFactory.createInstance(13, 9, UnitTypeEnum.ZOMBIE));
+            treasureList.Add((Treasure)UnitFactory.createInstance(3,1,UnitTypeEnum.TREASURE));
+            treasureList.Add((Treasure)UnitFactory.createInstance(8, 10, UnitTypeEnum.TREASURE));
+            treasureList.Add((Treasure)UnitFactory.createInstance(18, 10, UnitTypeEnum.TREASURE));
+            treasureList.Add((Treasure)UnitFactory.createInstance(4,7, UnitTypeEnum.TREASURE));
+            treasureList.Add((Treasure)UnitFactory.createInstance(5, 18, UnitTypeEnum.TREASURE));
+            treasureList.Add((Treasure)UnitFactory.createInstance(7, 15, UnitTypeEnum.TREASURE));
         }
-
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
         /// all content.
@@ -120,13 +123,32 @@ namespace MiniGame
                 Window.Title = "Win";
 
             // TODO: Add your update logic here
-            int n = unitList.Count;
+            int n = monsterList.Count;
             for (int i = 0; i < n; i++)
             {
-                unitList[i].Update(gameTime);
+                monsterList[i].Update(gameTime);
+                if (monsterList[i].isOverridePlayer(player.LogicX, player.LogicY)){
+                    Window.Title = "you die";
+                }
             }
             player.Update(gameTime);
 
+            int tn = treasureList.Count;
+            for(int i = 0; i< tn; i++)
+            {
+                treasureList[i].Update(gameTime);
+                if (treasureList[i].isOverridePlayer(player.LogicX, player.LogicY)){
+                    if(player.collectTreasure(treasureList[i])){
+                        Window.Title = "you collect a tresure";
+                        treasureList.RemoveAt(i);
+                        tn--;
+                    }
+                    else
+                    {
+                        Window.Title = "your bag is full";
+                    }
+                }
+            }
             
             base.Update(gameTime);
         }
@@ -143,10 +165,16 @@ namespace MiniGame
             this.spriteBatch.Begin(SpriteSortMode.FrontToBack,BlendState.AlphaBlend);
 
             map.Draw(gameTime, spriteBatch);
-            int n = unitList.Count;
+            int n = monsterList.Count;
             for(int  i =0; i< n; i++)
             {
-                unitList[i].Draw(gameTime, spriteBatch);
+                monsterList[i].Draw(gameTime, spriteBatch);
+            }
+
+            n = treasureList.Count;
+            for (int i = 0; i < n; i++)
+            {
+                treasureList[i].Draw(gameTime, spriteBatch);
             }
 
             player.Draw(gameTime, spriteBatch);

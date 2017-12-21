@@ -30,10 +30,10 @@ namespace MiniGame
                     return new Scorpion(X, Y, texs);
                 case UnitTypeEnum.CHARACTER:
                     texs = Global.loadTexture("Player");
-                    return Player.getInstance(X, Y, texs);
+                    return Player.getInstance(X, Y, texs,0.4f);
                 case UnitTypeEnum.TREASURE:
                     texs = Global.loadTexture("Treasure");
-                    return new Treasure(X, Y, texs);
+                    return new Treasure(X, Y, texs,0.3f);
                 default:
                     return null;
             }

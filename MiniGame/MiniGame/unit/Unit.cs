@@ -42,7 +42,7 @@ namespace MiniGame
         }
         #endregion
 
-        public Unit(float left, float top, List<Texture2D> textures, float depth = 0.3f)
+        public Unit(float left, float top, List<Texture2D> textures, float depth = 0.5f)
         {
             this.LogicX = left;
             this.LogicY = top;
@@ -85,6 +85,14 @@ namespace MiniGame
             _model.State = state;
         }
 
+        public virtual bool isOverridePlayer( Vector2 playerPos)
+        {
+            return isOverridePlayer(playerPos.X, playerPos.Y);
+        }
 
+        public virtual bool isOverridePlayer(float X, float Y)
+        {
+            return this.LogicX == X && this.LogicY == Y;
+        }
     }
 }

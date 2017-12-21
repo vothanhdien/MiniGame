@@ -87,6 +87,7 @@
     <Compile Include="KeyboardHelper.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="Monster.cs" />
     <Compile Include="MouseHelper.cs" />
     <Compile Include="unit\Mummy.cs" />
     <Compile Include="unit\Player.cs" />

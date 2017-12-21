@@ -11,6 +11,31 @@ namespace MiniGame
     {
         private static Player instance = null;
 
+        private List<Treasure> treaseList = new List<Treasure>();
+
+        public List<Treasure> TreaseList
+        {
+            get
+            {
+                return treaseList;
+            }
+
+            set
+            {
+                treaseList = value;
+            }
+        }
+
+        public bool collectTreasure(Treasure tr)
+        {
+            if (TreaseList.Count >= 2)
+            {
+                return false;
+            }
+           TreaseList.Add(tr);
+            return true;
+        }
+
         public Player(float left, float top, List<Texture2D> textures, float depth = 0.3F) : base(left, top, textures, depth)
         {
         }

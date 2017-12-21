@@ -9,6 +9,21 @@ namespace MiniGame
 {
     public class Treasure : Unit
     {
+        private float weight;
+
+        public float Weight
+        {
+            get
+            {
+                return weight;
+            }
+
+            set
+            {
+                weight = value;
+            }
+        }
+
         public Treasure(float left, float top, List<Texture2D> textures, float depth = 0.3F) : base(left, top, textures, depth)
         {
         }

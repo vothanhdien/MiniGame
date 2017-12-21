@@ -45,12 +45,12 @@
   <Class Name="MiniGame.Map" Collapsed="true">
     <Position X="14" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgQACAAABACCEgCBAQAAAkgAEBQAAAgBAAAAECQIAAE=</HashCode>
+      <HashCode>AgQACAAABACCEgCBAQAAAkgAUBQAAAgBAAAAECQIAAE=</HashCode>
       <FileName>Map.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MiniGame.Player" Collapsed="true">
-    <Position X="14.25" Y="5.75" Width="1.5" />
+    <Position X="12" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAABAAAQAAAAAAAAAAAA=</HashCode>
       <FileName>unit\Player.cs</FileName>
@@ -64,28 +64,28 @@
     </TypeIdentifier>
   </Class>
   <Class Name="MiniGame.Treasure" Collapsed="true">
-    <Position X="16" Y="5.75" Width="1.5" />
+    <Position X="14.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>unit\Treasure.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MiniGame.Mummy" Collapsed="true">
-    <Position X="8.75" Y="5.75" Width="1.5" />
+    <Position X="8.25" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>unit\Mummy.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MiniGame.Zombie" Collapsed="true">
-    <Position X="10.5" Y="5.75" Width="1.5" />
+    <Position X="10.25" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>unit\Zombie.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MiniGame.Scorpion" Collapsed="true">
-    <Position X="12.25" Y="5.75" Width="1.5" />
+    <Position X="12.25" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>unit\Scorpion.cs</FileName>
@@ -115,7 +115,7 @@
   <Class Name="MiniGame.Global" Collapsed="true">
     <Position X="0.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAABgAAAAAAAAABAAAAAQCGAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>BAAAAAAABgAAAAAAAAABAAAAAQCCAAAAgAAAAAAAAAA=</HashCode>
       <FileName>Global.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -143,7 +143,7 @@
   <Class Name="MiniGame.Game1" Collapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAEEAAAAAAAwAAAABAAAAAAAAAAAgBAAAAAAAAAAQ=</HashCode>
+      <HashCode>AAQAEEAAAAAAAwAAAABAAAAAAAAAAAgBAAAAAAAAAAw=</HashCode>
       <FileName>Game1.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -152,6 +152,13 @@
     <TypeIdentifier>
       <HashCode>AAAEgIAAEAAAAAAAAAAAAIAAAAAAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>Config.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiniGame.Monster" Collapsed="true">
+    <Position X="10.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Monster.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

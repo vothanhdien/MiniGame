@@ -7,7 +7,7 @@ using System.Text;
 
 namespace MiniGame
 {
-    public class Scorpion : Unit
+    public class Scorpion : Monster
     {
         public Scorpion(float left, float top, List<Texture2D> textures, float depth = 0.3F) : base(left, top, textures, depth)
         {
