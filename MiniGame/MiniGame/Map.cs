@@ -170,8 +170,10 @@ namespace MiniGame
             return exit;
         }
 
-        public bool canGo(int col, int row)
+        public bool canGo(float cols, float rows)
         {
+            int row = (int)rows;
+            int col = (int)cols;
             if (row < 0 || row >= Rows || col < 0 || col >= Cols)
                 return false;
             return logicMap[row, col] == 1;
@@ -210,11 +212,11 @@ namespace MiniGame
                 for (int j = 0; j < cols; j++)
                 {
                     //3 la tuong nhu luc khoi tao
-                    //if (matrix[i, j] == 0 || matrix[i, j] > 2)
-                    //    matrix[i, j] = 0;
-                    //else if (matrix[i, j] < 0 || matrix[i, j] == 2)
-                    //    matrix[i, j] = 1;
-                    matrix[i, j] = 1;
+                    if (matrix[i, j] == 0 || matrix[i, j] > 2)
+                        matrix[i, j] = 0;
+                    else if (matrix[i, j] < 0 || matrix[i, j] == 2)
+                        matrix[i, j] = 1;
+                    //matrix[i, j] = 1;
                 }
             }
 

@@ -13,8 +13,78 @@ namespace MiniGame
         {
         }
 
+        float t = 0;
+        float dt = 0.25f;
         public override void Update(GameTime gameTime)
         {
+            if (t % 5 == 0)
+            {
+                float newX = LogicX;
+                float newY = LogicY;
+                while (true)
+                {
+                    newX = newX + 1;
+                    newY = newY + 1;
+                    if (!Global.map.canGo(newX, newY))
+                    {
+                        break;
+                    }
+                    if (Global.playerPos.X == newX && Global.playerPos.Y == newY)
+                    {
+                        this.transact(LogicX + 1, LogicY + 1);
+                        break;
+                    }
+                }
+                newX = LogicX;
+                newY = LogicY;
+                while (true)
+                {
+                    newX = newX - 1;
+                    newY = newY - 1;
+                    if (!Global.map.canGo(newX, newY))
+                    {
+                        break;
+                    }
+                    if (Global.playerPos.X == newX && Global.playerPos.Y == newY)
+                    {
+                        this.transact(LogicX - 1, LogicY - 1);
+                        break;
+                    }
+                }
+                newX = LogicX;
+                newY = LogicY;
+                while (true)
+                {
+                    newX = newX - 1;
+                    newY = newY + 1;
+                    if (!Global.map.canGo(newX, newY))
+                    {
+                        break;
+                    }
+                    if (Global.playerPos.X == newX && Global.playerPos.Y == newY)
+                    {
+                        this.transact(LogicX - 1, LogicY + 1);
+                        break;
+                    }
+                }
+                newX = LogicX;
+                newY = LogicY;
+                while (true)
+                {
+                    newX = newX + 1;
+                    newY = newY - 1;
+                    if (!Global.map.canGo(newX, newY))
+                    {
+                        break;
+                    }
+                    if (Global.playerPos.X == newX && Global.playerPos.Y == newY)
+                    {
+                        this.transact(LogicX + 1, LogicY - 1);
+                        break;
+                    }
+                }
+            }
+            t += dt;
             base.Update(gameTime);
         }
 

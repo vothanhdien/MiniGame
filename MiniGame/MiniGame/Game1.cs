@@ -60,9 +60,9 @@ namespace MiniGame
 
             player = (Player)UnitFactory.createInstance(Global.map.getEntrance(), UnitTypeEnum.CHARACTER);
 
-            monsterList.Add(UnitFactory.createInstance(2, 1, UnitTypeEnum.MUMMY));
+            monsterList.Add(UnitFactory.createInstance(2, 1, UnitTypeEnum.ZOMBIE));
             monsterList.Add(UnitFactory.createInstance(5, 5, UnitTypeEnum.MUMMY));
-            monsterList.Add(UnitFactory.createInstance(13, 9, UnitTypeEnum.MUMMY));
+            monsterList.Add(UnitFactory.createInstance(13, 9, UnitTypeEnum.SCORPION));
             treasureList.Add((Treasure)UnitFactory.createInstance(3,1,UnitTypeEnum.TREASURE));
             treasureList.Add((Treasure)UnitFactory.createInstance(8, 10, UnitTypeEnum.TREASURE));
             treasureList.Add((Treasure)UnitFactory.createInstance(18, 10, UnitTypeEnum.TREASURE));

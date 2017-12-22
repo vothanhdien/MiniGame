@@ -18,11 +18,11 @@ namespace MiniGame
 
         public override void Update(GameTime gameTime)
         {
-            if (t % 3 == 0)
+            if (t % 5 == 0)
             {
                 for (float i = LogicX + 1; i < Global.map.Cols; i++)
                 {
-                    if (!Global.map.canGo((int)i, (int)LogicY))
+                    if (!Global.map.canGo(i, LogicY))
                     {
                         break;
                     }
@@ -34,7 +34,7 @@ namespace MiniGame
                 }
                 for (float i = LogicX - 1; i > 0; i--)
                 {
-                    if (!Global.map.canGo((int)i, (int)LogicY))
+                    if (!Global.map.canGo(i, LogicY))
                     {
                         break;
                     }
@@ -46,7 +46,7 @@ namespace MiniGame
                 }
                 for (float i = LogicY + 1; i < Global.map.Rows; i++)
                 {
-                    if (!Global.map.canGo((int)LogicX, (int)i))
+                    if (!Global.map.canGo(LogicX, i))
                     {
                         break;
                     }
@@ -58,7 +58,7 @@ namespace MiniGame
                 }
                 for (float i = LogicY - 1; i > 0; i--)
                 {
-                    if (!Global.map.canGo((int)LogicX, (int)i))
+                    if (!Global.map.canGo(LogicX, i))
                     {
                         break;
                     }
