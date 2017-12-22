@@ -74,7 +74,6 @@ namespace MiniGame
 
         public virtual void transact(float X, float Y)
         {
-            
             LogicX = X;
             LogicY = Y;
             _model.transact(logicX * 32, logicY * 32);

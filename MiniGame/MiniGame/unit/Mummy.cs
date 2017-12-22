@@ -13,19 +13,65 @@ namespace MiniGame
         {
         }
 
-        //public Mummy(float left, float top, List<Texture2D> textures, float depth = 0.3f)
-        //{
-        //    this.LogicX = left;
-        //    this.LogicY = top;
-
-        //    _model = new Sprite2D(LogicX*32, LogicY*32, textures, depth);
-
-        //}
+        float t = 0;
+        float dt = 0.25f;
 
         public override void Update(GameTime gameTime)
         {
+            if (t % 3 == 0)
+            {
+                for (float i = LogicX + 1; i < Global.map.Cols; i++)
+                {
+                    if (!Global.map.canGo((int)i, (int)LogicY))
+                    {
+                        break;
+                    }
+                    if (Global.playerPos.X == i && LogicY == Global.playerPos.Y)
+                    {
+                        this.transact(LogicX + 1, LogicY);
+                        break;
+                    }
+                }
+                for (float i = LogicX - 1; i > 0; i--)
+                {
+                    if (!Global.map.canGo((int)i, (int)LogicY))
+                    {
+                        break;
+                    }
+                    if (Global.playerPos.X == i && LogicY == Global.playerPos.Y)
+                    {
+                        this.transact(LogicX - 1, LogicY);
+                        break;
+                    }
+                }
+                for (float i = LogicY + 1; i < Global.map.Rows; i++)
+                {
+                    if (!Global.map.canGo((int)LogicX, (int)i))
+                    {
+                        break;
+                    }
+                    if (Global.playerPos.X == LogicX && Global.playerPos.Y == i)
+                    {
+                        this.transact(LogicX, LogicY + 1);
+                        break;
+                    }
+                }
+                for (float i = LogicY - 1; i > 0; i--)
+                {
+                    if (!Global.map.canGo((int)LogicX, (int)i))
+                    {
+                        break;
+                    }
+                    if (Global.playerPos.X == LogicX && Global.playerPos.Y == i)
+                    {
+                        this.transact(LogicX, LogicY - 1);
+                        break;
+                    }
+                }
+            }
+            t += dt;
             base.Update(gameTime);
-        }
+        } 
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {

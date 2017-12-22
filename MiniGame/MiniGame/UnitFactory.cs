@@ -21,13 +21,13 @@ namespace MiniGame
             {
                 case UnitTypeEnum.ZOMBIE:
                     texs = Global.loadTexture("Zombies");
-                    return new Zombie(X, Y, texs);
+                    return new Zombie(X, Y, texs, 0.5f);
                 case UnitTypeEnum.MUMMY:
                     texs = Global.loadTexture("Mummies");
-                    return new Mummy(X, Y, texs);
+                    return new Mummy(X, Y, texs, 0.5f);
                 case UnitTypeEnum.SCORPION:
                     texs = Global.loadTexture("Scorpions");
-                    return new Scorpion(X, Y, texs);
+                    return new Scorpion(X, Y, texs, 0.5f);
                 case UnitTypeEnum.CHARACTER:
                     texs = Global.loadTexture("Player");
                     return Player.getInstance(X, Y, texs,0.4f);

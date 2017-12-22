@@ -18,7 +18,6 @@ namespace MiniGame
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Map map;
         List<Unit> monsterList = new List<Unit>();
         List<Treasure> treasureList = new List<Treasure>();
         Player player = null;
@@ -55,15 +54,15 @@ namespace MiniGame
             Config.Instance.Load();
             // TODO: use this.Content to load your game content here
 
-            map = new Map(0, 0, "map\\", 15, 20);
+           Global.map = new Map(0, 0, "map\\", 15, 20);
 
             
 
-            player = (Player)UnitFactory.createInstance(map.getEntrance(), UnitTypeEnum.CHARACTER);
+            player = (Player)UnitFactory.createInstance(Global.map.getEntrance(), UnitTypeEnum.CHARACTER);
 
             monsterList.Add(UnitFactory.createInstance(2, 1, UnitTypeEnum.MUMMY));
-            monsterList.Add(UnitFactory.createInstance(5, 5, UnitTypeEnum.SCORPION));
-            monsterList.Add(UnitFactory.createInstance(13, 9, UnitTypeEnum.ZOMBIE));
+            monsterList.Add(UnitFactory.createInstance(5, 5, UnitTypeEnum.MUMMY));
+            monsterList.Add(UnitFactory.createInstance(13, 9, UnitTypeEnum.MUMMY));
             treasureList.Add((Treasure)UnitFactory.createInstance(3,1,UnitTypeEnum.TREASURE));
             treasureList.Add((Treasure)UnitFactory.createInstance(8, 10, UnitTypeEnum.TREASURE));
             treasureList.Add((Treasure)UnitFactory.createInstance(18, 10, UnitTypeEnum.TREASURE));
@@ -95,10 +94,10 @@ namespace MiniGame
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-
-            if(currentGameState == GameStateEnum.GAME_PAUSE || currentGameState == GameStateEnum.GAME_END)
+            Window.Title = player.LogicX + " : " + player.LogicY;
+            if (currentGameState == GameStateEnum.GAME_PAUSE || currentGameState == GameStateEnum.GAME_END)
             {
-                Window.Title += " all step " + player.TotalStep + " treasuse" + player.TreaseList.Count;
+                Window.Title = " all step " + player.TotalStep + " treasuse: " + player.TreaseList.Count;
                 return;
             }
 
@@ -112,30 +111,30 @@ namespace MiniGame
             if (Global.keyboardHelper.IsKeyPressed(Keys.A))
             {
                 player.setState(UnitStateEnum.MOVELEFT);
-                if (map.canGo((int)player.LogicX - 1, (int)player.LogicY))
+                if (Global.map.canGo((int)player.LogicX - 1, (int)player.LogicY))
                     player.transact(player.LogicX - 1, player.LogicY);
 
             } else if (Global.keyboardHelper.IsKeyPressed(Keys.D))
             {
                 player.setState(UnitStateEnum.MOVERIGHT);
-                if (map.canGo((int)player.LogicX + 1, (int)player.LogicY))
+                if (Global.map.canGo((int)player.LogicX + 1, (int)player.LogicY))
                     player.transact(player.LogicX + 1, player.LogicY );
             }
             else if (Global.keyboardHelper.IsKeyPressed(Keys.W))
             {
                 player.setState(UnitStateEnum.MOVEBACK);
-                if (map.canGo((int)player.LogicX, (int)player.LogicY - 1))
+                if (Global.map.canGo((int)player.LogicX, (int)player.LogicY - 1))
                     player.transact(player.LogicX, player.LogicY - 1);
             }
             else if (Global.keyboardHelper.IsKeyPressed(Keys.S))
             {
                 player.setState(UnitStateEnum.MOVEFORWAR);
-                if (map.canGo((int)player.LogicX, (int)player.LogicY + 1))
+                if (Global.map.canGo((int)player.LogicX, (int)player.LogicY + 1))
                     player.transact(player.LogicX , player.LogicY + 1);
             }
 
             //Win game
-            Vector2 exit = map.getExit();
+            Vector2 exit = Global.map.getExit();
             if (player.LogicX == exit.X && player.LogicY == exit.Y)
                 Window.Title = "Win";
 
@@ -182,7 +181,7 @@ namespace MiniGame
             // TODO: Add your drawing code here
             this.spriteBatch.Begin(SpriteSortMode.FrontToBack,BlendState.AlphaBlend);
 
-            map.Draw(gameTime, spriteBatch);
+            Global.map.Draw(gameTime, spriteBatch);
             int n = monsterList.Count;
             for(int  i =0; i< n; i++)
             {

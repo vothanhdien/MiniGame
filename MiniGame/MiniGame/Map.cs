@@ -29,7 +29,7 @@ namespace MiniGame
         {
             get
             {
-                return _height * _rows;
+                return _height * Rows;
             }
         }
 
@@ -41,14 +41,40 @@ namespace MiniGame
             }
         }
 
+        public int Rows
+        {
+            get
+            {
+                return _rows;
+            }
+
+            set
+            {
+                _rows = value;
+            }
+        }
+
+        public int Cols
+        {
+            get
+            {
+                return _cols;
+            }
+
+            set
+            {
+                _cols = value;
+            }
+        }
+
         public Map(float left, float top, string strResource, int rows, int cols)
         {
             _left = left;
             _top = top;
-            _rows = rows;
-            _cols = cols;
+            Rows = rows;
+            Cols = cols;
 
-            logicMap = createMap(_rows, _cols);
+            logicMap = createMap(Rows, Cols);
 
             //Texture2D tmp = Global.Content.Load<Texture2D>(strResource + "00_00");
             //_height = tmp.Height;
@@ -60,9 +86,9 @@ namespace MiniGame
         public void loadTexture(string strResource)
         {
 
-            textureMap = new Sprite2D[_rows, _cols];
-            for (int r = 0; r < _rows; r++)
-                for (int c = 0; c < _cols; c++)
+            textureMap = new Sprite2D[Rows, Cols];
+            for (int r = 0; r < Rows; r++)
+                for (int c = 0; c < Cols; c++)
                 {
                     if (logicMap[r, c] == 0)
                         textureMap[r, c] = new Sprite2D(
@@ -89,8 +115,8 @@ namespace MiniGame
         public override void Update(GameTime gameTime)
         {
             //base.Update(gameTime);
-            for (int r = 0; r < _rows; r++)
-                for (int c = 0; c < _cols; c++)
+            for (int r = 0; r < Rows; r++)
+                for (int c = 0; c < Cols; c++)
                     textureMap[r, c].Update(gameTime);
         }
 
@@ -98,8 +124,8 @@ namespace MiniGame
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             //base.Draw(gameTime, spriteBatch);
-            for (int r = 0; r < _rows; r++)
-                for (int c = 0; c < _cols; c++)
+            for (int r = 0; r < Rows; r++)
+                for (int c = 0; c < Cols; c++)
                     if (IsVisible(r, c))
                         textureMap[r, c].Draw(gameTime, spriteBatch);
 
@@ -114,11 +140,11 @@ namespace MiniGame
         {
             if (entrance == Vector2.Zero)
             {
-                for (int i = 1; i < _rows - 1; i++)
+                for (int i = 1; i < Rows - 1; i++)
                 {
-                    if (logicMap[i, _cols - 1] == 1)
+                    if (logicMap[i, Cols - 1] == 1)
                     {
-                        entrance.X = _cols - 1;
+                        entrance.X = Cols - 1;
                         entrance.Y = i;
                         break;
                     }
@@ -130,7 +156,7 @@ namespace MiniGame
         {
             if (exit == Vector2.Zero)
             {
-                for (int i = 1; i < _rows - 1; i++)
+                for (int i = 1; i < Rows - 1; i++)
                 {
                     if (logicMap[i, 0] == 1)
                     {
@@ -146,7 +172,7 @@ namespace MiniGame
 
         public bool canGo(int col, int row)
         {
-            if (row < 0 || row >= _rows || col < 0 || col >= _cols)
+            if (row < 0 || row >= Rows || col < 0 || col >= Cols)
                 return false;
             return logicMap[row, col] == 1;
         }
@@ -154,9 +180,9 @@ namespace MiniGame
         public List<Vector2> getListRoad()
         {
             List<Vector2> ret = new List<Vector2>();
-            for (int i = 1; i < _rows-1; i++)
+            for (int i = 1; i < Rows-1; i++)
             {
-                for (int j = 1; j < _cols - 1; j++)
+                for (int j = 1; j < Cols - 1; j++)
                 {
                     if (logicMap[i, j] == 1)
                         ret.Add(new Vector2(j, i));
@@ -184,10 +210,11 @@ namespace MiniGame
                 for (int j = 0; j < cols; j++)
                 {
                     //3 la tuong nhu luc khoi tao
-                    if (matrix[i, j] == 0 || matrix[i, j] > 2)
-                        matrix[i, j] = 0;
-                    else if (matrix[i, j] < 0 || matrix[i, j] == 2)
-                        matrix[i, j] = 1;
+                    //if (matrix[i, j] == 0 || matrix[i, j] > 2)
+                    //    matrix[i, j] = 0;
+                    //else if (matrix[i, j] < 0 || matrix[i, j] == 2)
+                    //    matrix[i, j] = 1;
+                    matrix[i, j] = 1;
                 }
             }
 

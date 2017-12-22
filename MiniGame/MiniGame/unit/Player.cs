@@ -43,7 +43,7 @@ namespace MiniGame
 
         public bool collectTreasure(Treasure tr)
         {
-            if (TreaseList.Count >= 2)
+            if (TreaseList.Count >= 6)
             {
                 return false;
             }

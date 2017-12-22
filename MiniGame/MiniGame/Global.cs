@@ -12,6 +12,7 @@ namespace MiniGame
 {
     public class Global
     {
+        public static Map map;
         public static ContentManager Content;
         public static KeyboardHelper keyboardHelper = new KeyboardHelper();
         public static MouseHelper mouseHelper = new MouseHelper();
