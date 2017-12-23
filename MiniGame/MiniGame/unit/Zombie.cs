@@ -76,7 +76,7 @@ namespace MiniGame
                     {
                         break;
                     }
-                    if (Global.playerPos.X == newX && Global.playerPos.Y == newY)
+                    if (Global.playerPos.X == newX && Global.playerPos.Y == newY && Global.map.canGo(LogicX+1, LogicY))
                     {
                         this.transact(LogicX + 1, LogicY);
                         break;
@@ -92,7 +92,7 @@ namespace MiniGame
                     {
                         break;
                     }
-                    if (Global.playerPos.X == newX && Global.playerPos.Y == newY)
+                    if (Global.playerPos.X == newX && Global.playerPos.Y == newY && Global.map.canGo(LogicX - 1, LogicY))
                     {
                         this.transact(LogicX - 1, LogicY);
                         break;
@@ -108,7 +108,7 @@ namespace MiniGame
                     {
                         break;
                     }
-                    if (Global.playerPos.X == newX && Global.playerPos.Y == newY)
+                    if (Global.playerPos.X == newX && Global.playerPos.Y == newY && Global.map.canGo(LogicX, LogicY + 1))
                     {
                         this.transact(LogicX , LogicY + 1);
                         break;
@@ -124,7 +124,7 @@ namespace MiniGame
                     {
                         break;
                     }
-                    if (Global.playerPos.X == newX && Global.playerPos.Y == newY)
+                    if (Global.playerPos.X == newX && Global.playerPos.Y == newY && Global.map.canGo(LogicX, LogicY - 1))
                     {
                         this.transact(LogicX, LogicY - 1);
                         break;

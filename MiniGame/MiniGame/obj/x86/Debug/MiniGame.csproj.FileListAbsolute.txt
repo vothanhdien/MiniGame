@@ -78,3 +78,5 @@ C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame
 C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\09.xnb
 C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\10.xnb
 C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\11.xnb
+C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\menuText.xnb
+C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\menu_button.xnb

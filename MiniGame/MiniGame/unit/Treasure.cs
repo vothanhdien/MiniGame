@@ -26,6 +26,8 @@ namespace MiniGame
 
         public Treasure(float left, float top, List<Texture2D> textures, float depth = 0.3F) : base(left, top, textures, depth)
         {
+            Random x = new Random();
+            Weight = (float)(x.NextDouble() * 2 + 8);
         }
 
         public override void Update(GameTime gameTime)

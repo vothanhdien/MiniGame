@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 
 namespace MiniGame
@@ -11,6 +12,17 @@ namespace MiniGame
     {
         public static JObject jsonConfig = null;
         private static Config _instance = null;
+
+        private static string CONFIG_DP = "config.json";
+        private static string APP_PATH = getpath();
+
+
+        private static string getpath()
+        {
+            var codeBase = Assembly.GetExecutingAssembly();
+            //var exeBase = new UriBuilder(codeBase).Path;
+            return Path.GetDirectoryName(codeBase.Location);
+        }
 
         internal static Config Instance
         {
@@ -27,7 +39,7 @@ namespace MiniGame
         }
         public void Load()
         {
-            var path = $"{Global.APP_PATH}\\{Global.CONFIG_DP}";
+            var path = $"{APP_PATH}\\{CONFIG_DP}";
             var jsonText = File.ReadAllText(path);
             jsonConfig = JObject.Parse(jsonText);
         }
@@ -46,6 +58,14 @@ namespace MiniGame
 
             return res;
             //return (jsonConfig["Textures"][unitName] as JArray).Select(v => v.ToString()).ToArray();
+        }
+
+        public static string LoadSpriteFont(String fontName)
+        {
+            JToken token = jsonConfig["SpriteFont"][fontName];
+            var o = token.Select(v => v.ToString());
+            
+            return o.ToString();
         }
     }
 }

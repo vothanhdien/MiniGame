@@ -20,19 +20,19 @@ namespace MiniGame
             switch (type)
             {
                 case UnitTypeEnum.ZOMBIE:
-                    texs = Global.loadTexture("Zombies");
+                    texs = Global.loadTextures("Zombies");
                     return new Zombie(X, Y, texs, 0.5f);
                 case UnitTypeEnum.MUMMY:
-                    texs = Global.loadTexture("Mummies");
+                    texs = Global.loadTextures("Mummies");
                     return new Mummy(X, Y, texs, 0.5f);
                 case UnitTypeEnum.SCORPION:
-                    texs = Global.loadTexture("Scorpions");
+                    texs = Global.loadTextures("Scorpions");
                     return new Scorpion(X, Y, texs, 0.5f);
                 case UnitTypeEnum.CHARACTER:
-                    texs = Global.loadTexture("Player");
+                    texs = Global.loadTextures("Player");
                     return Player.getInstance(X, Y, texs,0.4f);
                 case UnitTypeEnum.TREASURE:
-                    texs = Global.loadTexture("Treasure");
+                    texs = Global.loadTextures("Treasure");
                     return new Treasure(X, Y, texs,0.3f);
                 default:
                     return null;

@@ -15,6 +15,8 @@ namespace MiniGame
 
         private int totalStep = 0;
 
+        private float totalWeight = 0;
+
         public List<Treasure> TreaseList
         {
             get
@@ -43,11 +45,13 @@ namespace MiniGame
 
         public bool collectTreasure(Treasure tr)
         {
-            if (TreaseList.Count >= 6)
+            
+            if (tr.Weight + totalWeight > 50)
             {
                 return false;
             }
-           TreaseList.Add(tr);
+            TreaseList.Add(tr);
+            totalWeight += tr.Weight;
             return true;
         }
 
@@ -87,6 +91,9 @@ namespace MiniGame
             base.transact(X, Y);
         }
 
-
+        public float getTotalWeight()
+        {
+            return totalWeight;
+        }
     }
 }

@@ -13,24 +13,21 @@ namespace MiniGame
     public class Global
     {
         public static Map map;
-        public static ContentManager Content;
+        private static ContentManager Content;
         public static KeyboardHelper keyboardHelper = new KeyboardHelper();
         public static MouseHelper mouseHelper = new MouseHelper();
 
-        public static string CONFIG_DP = "config.json";
-        public static string APP_PATH = getpath();
+        public static void init(ContentManager content)
+        {
+            Content = content;
+        }
+
         public static float TEXTURE_WIDTH = 32;
 
         public static Vector2 playerPos = Vector2.Zero;
 
-        private static string getpath()
-        {
-            var codeBase = Assembly.GetExecutingAssembly();
-            //var exeBase = new UriBuilder(codeBase).Path;
-            return Path.GetDirectoryName(codeBase.Location);
-        }
 
-        public static List<Texture2D> loadTexture(string strResource)
+        public static List<Texture2D> loadTextures(string strResource)
         {
             List<Texture2D> res = new List<Texture2D>();
             string[] listTexture = Config.LoadUnitTextures(strResource);
@@ -41,6 +38,12 @@ namespace MiniGame
 
             return res;
 
+        }
+
+        public static SpriteFont loadSpriteFont(string strResoure)
+        {
+            string font = Config.LoadSpriteFont(strResoure);
+            return Content.Load<SpriteFont>(strResoure);
         }
     }
 }

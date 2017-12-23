@@ -3,9 +3,25 @@
 	"Scale_X" : 0.8,
 	"Scale_Y" : 0.8,
   "Textures": {
-    "map": [
-      "map/road",
+    "Button": [
+      "menu_button",
+      "menu_button",
+      "menu_button",
+      "menu_button",
+      "menu_button",
+      "menu_button",
+      "menu_button",
+      "menu_button",
+      "menu_button",
+      "menu_button",
+      "menu_button",
+      "menu_button"
+    ],
+    "Wall": [
       "map/wall"
+    ],
+    "Road": [
+      "map/road"
     ],
     "Treasure": [
       "treasure/00",
@@ -96,7 +112,6 @@
     ],
     "Aura": [ "aura01", "aura02", "aura03", "aura04", "aura05", "aura06" ],
     "Island": [ "Starter_Island" ],
-    "Button": [ "menu_button" ],
     "background": [ "background" ],
     "a": [ "a" ],
     "b": [ "b" ],
@@ -134,5 +149,8 @@
       "Option": "option",
       "Exit": "exit"
     }
+  },
+  "SpriteFont": {
+    "MenuText": "menuText"
   }
 }

@@ -22,6 +22,8 @@ namespace MiniGame
         List<Treasure> treasureList = new List<Treasure>();
         Player player = null;
         GameStateEnum currentGameState = GameStateEnum.GAME_PLAYING;
+        SubMenu subMenu;
+        Random random;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -47,31 +49,36 @@ namespace MiniGame
         /// </summary>
         protected override void LoadContent()
         {
+            random = new Random();
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             this.IsMouseVisible = true;
-            Global.Content = this.Content;
+            //Global.Content = this.Content;
+            Global.init(this.Content);
             Config.Instance.Load();
             // TODO: use this.Content to load your game content here
 
-           Global.map = new Map(0, 0, "map\\", 15, 20);
+            Global.map = new Map(0, 0, "map\\", 15, 20);
 
-            
+            subMenu = new SubMenu(this.GraphicsDevice);
 
             player = (Player)UnitFactory.createInstance(Global.map.getEntrance(), UnitTypeEnum.CHARACTER);
 
-            monsterList.Add(UnitFactory.createInstance(2, 1, UnitTypeEnum.ZOMBIE));
-            monsterList.Add(UnitFactory.createInstance(5, 5, UnitTypeEnum.MUMMY));
-            monsterList.Add(UnitFactory.createInstance(13, 9, UnitTypeEnum.SCORPION));
-            treasureList.Add((Treasure)UnitFactory.createInstance(3,1,UnitTypeEnum.TREASURE));
-            treasureList.Add((Treasure)UnitFactory.createInstance(8, 10, UnitTypeEnum.TREASURE));
-            treasureList.Add((Treasure)UnitFactory.createInstance(18, 10, UnitTypeEnum.TREASURE));
-            treasureList.Add((Treasure)UnitFactory.createInstance(4, 7, UnitTypeEnum.TREASURE));
-            treasureList.Add((Treasure)UnitFactory.createInstance(5, 12, UnitTypeEnum.TREASURE));
-            treasureList.Add((Treasure)UnitFactory.createInstance(7, 11, UnitTypeEnum.TREASURE));
-            treasureList.Add((Treasure)UnitFactory.createInstance(4, 1, UnitTypeEnum.TREASURE));
-            treasureList.Add((Treasure)UnitFactory.createInstance(5, 1, UnitTypeEnum.TREASURE));
-            treasureList.Add((Treasure)UnitFactory.createInstance(7, 10, UnitTypeEnum.TREASURE));
+
+            List<Vector2> a = Global.map.getListRoad();
+
+            monsterList.Add(UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.ZOMBIE));
+            monsterList.Add(UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.MUMMY));
+            monsterList.Add(UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.SCORPION));
+            treasureList.Add((Treasure)UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.TREASURE));
+            treasureList.Add((Treasure)UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.TREASURE));
+            treasureList.Add((Treasure)UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.TREASURE));
+            treasureList.Add((Treasure)UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.TREASURE));
+            treasureList.Add((Treasure)UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.TREASURE));
+            treasureList.Add((Treasure)UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.TREASURE));
+            treasureList.Add((Treasure)UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.TREASURE));
+            treasureList.Add((Treasure)UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.TREASURE));
+            treasureList.Add((Treasure)UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.TREASURE));
         }
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
@@ -133,6 +140,8 @@ namespace MiniGame
                     player.transact(player.LogicX , player.LogicY + 1);
             }
 
+            subMenu.updateTotalStep(player.TotalStep);
+
             //Win game
             Vector2 exit = Global.map.getExit();
             if (player.LogicX == exit.X && player.LogicY == exit.Y)
@@ -158,6 +167,7 @@ namespace MiniGame
                     if(player.collectTreasure(treasureList[i])){
                         Window.Title = "you collect a tresure";
                         treasureList.RemoveAt(i);
+                        subMenu.updateTotalWeight(player.getTotalWeight());
                         tn--;
                     }
                     else
@@ -181,6 +191,7 @@ namespace MiniGame
             // TODO: Add your drawing code here
             this.spriteBatch.Begin(SpriteSortMode.FrontToBack,BlendState.AlphaBlend);
 
+            subMenu.Draw(gameTime, spriteBatch);
             Global.map.Draw(gameTime, spriteBatch);
             int n = monsterList.Count;
             for(int  i =0; i< n; i++)
@@ -195,7 +206,6 @@ namespace MiniGame
             }
 
             player.Draw(gameTime, spriteBatch);
-
             this.spriteBatch.End();
             base.Draw(gameTime);
         }

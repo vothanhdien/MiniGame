@@ -91,25 +91,19 @@ namespace MiniGame
                 for (int c = 0; c < Cols; c++)
                 {
                     if (logicMap[r, c] == 0)
-                        textureMap[r, c] = new Sprite2D(
-                        _left + c * _width,
-                        _top + r * _height,
-                        CreateListTexture(strResource + "wall"), 0.1f);
+                        textureMap[r, c] = new Sprite2D(_left + c * _width,_top + r * _height,Global.loadTextures("Wall"), 0.1f);
                     else
-                        textureMap[r, c] = new Sprite2D(
-                        _left + c * _width,
-                        _top + r * _height,
-                        CreateListTexture(strResource + "road"), 0.1f);
+                        textureMap[r, c] = new Sprite2D(_left + c * _width,_top + r * _height, Global.loadTextures("Road"), 0.1f);
                 }
 
         }
 
-        private List<Texture2D> CreateListTexture(string str)
-        {
-            List<Texture2D> ret = new List<Texture2D>();
-            ret.Add(Global.Content.Load<Texture2D>(str));
-            return ret;
-        }
+        //private List<Texture2D> CreateListTexture(string str)
+        //{
+        //    List<Texture2D> ret = new List<Texture2D>();
+        //    ret.Add(Global.Content.Load<Texture2D>(str));
+        //    return ret;
+        //}
 
 
         public override void Update(GameTime gameTime)
