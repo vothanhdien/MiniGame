@@ -14,6 +14,7 @@ namespace MiniGame
         private static Config _instance = null;
 
         private static string CONFIG_DP = "config.json";
+        private static string HIGH_SCORE = "highScore.json";
         private static string APP_PATH = getpath();
 
 
@@ -66,6 +67,35 @@ namespace MiniGame
             var o = token.Select(v => v.ToString());
             
             return o.ToString();
+        }
+
+        public float[] getHighScore()
+        {
+            var path = $"{APP_PATH}\\{HIGH_SCORE}";
+            var jsonText = File.ReadAllText(path);
+            JObject jsonScores = JObject.Parse(jsonText);
+
+            List<float> scoreList = new List<float>();
+            JToken token = jsonScores["HightScore"];
+            var o = token.Select(v => float.Parse(v.ToString()));
+            float[] res = o.ToArray();
+
+            return res;
+        }
+        public bool saveHighScore(float[] scores)
+        {
+            var path = $"{APP_PATH}\\{HIGH_SCORE}";
+
+            string content = "{"
+                + "HightScore: [";
+            for(int i = 0; i< scores.Length; i++)
+            {
+                content += scores[i] + ",";
+            }
+            content +="]}";
+
+            File.WriteAllText(path,content);
+            return true;
         }
     }
 }

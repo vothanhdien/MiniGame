@@ -62,3 +62,9 @@ Content\treasure\10.xnb
 Content\treasure\11.xnb
 Content\menuText.xnb
 Content\menu_button.xnb
+Content\buttons\button_black.xnb
+Content\buttons\button_blue.xnb
+Content\buttons\button_green.xnb
+Content\buttons\button_grey.xnb
+Content\buttons\button_organ.xnb
+Content\buttons\button_red.xnb

@@ -66,6 +66,20 @@ namespace MiniGame
             return instance;
         }
 
+        public void reloadPlayer(Vector2 pos)
+        {
+            reloadPlayer(pos.X, pos.Y);
+        }
+
+        public void reloadPlayer(float left, float top)
+        {
+            this.LogicX = left;
+            this.LogicY = top;
+            this.TreaseList.RemoveAll(v => true);
+            this.totalStep = 0;
+            this.totalWeight = 0;
+        }
+
         //public Player(float left, float top, List<Texture2D> textures, float depth = 0.3f)
         //{
         //    //this.LogicRow = left;

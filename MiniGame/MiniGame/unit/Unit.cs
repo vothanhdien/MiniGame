@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Graphics;
+using Newtonsoft.Json;
 
 namespace MiniGame
 {
@@ -92,6 +93,12 @@ namespace MiniGame
         public virtual bool isOverridePlayer(float X, float Y)
         {
             return this.LogicX == X && this.LogicY == Y;
+        }
+
+        public virtual string convertToJson()
+        {
+            string json = JsonConvert.SerializeObject(this, Formatting.Indented);
+            return json;
         }
     }
 }

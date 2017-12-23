@@ -17,6 +17,24 @@
       "menu_button",
       "menu_button"
     ],
+    "Button_red": [
+      "buttons/button_red"
+    ],
+    "Button_blue": [
+      "buttons/button_blue"
+    ],
+    "Button_green": [
+      "buttons/button_green"
+    ],
+    "Button_grey": [
+      "buttons/button_grey"
+    ],
+    "Button_black": [
+      "buttons/button_black"
+    ],
+    "Button_orange": [
+      "buttons/button_organ"
+    ],
     "Wall": [
       "map/wall"
     ],

@@ -13,6 +13,7 @@ namespace MiniGame
         Texture2D solidTexture;
         Component weight;
         Component step;
+        Component total;
 
         public SubMenu(GraphicsDevice gd)
         {
@@ -20,12 +21,18 @@ namespace MiniGame
             solidTexture.SetData(new Color[] { Color.White });
 
 
-            components.Add(new Button("Button", "EXIT", 750, 200, 1.0f));
-            components.Add(new Label("MenuText", "kg", 750, 50, 1.0f));
-            components.Add(new Label("MenuText", "step", 750, 100, 1.0f));
+            components.Add(new Button("Button_blue", "EXIT", 680, 200, 0.8f));
+            components.Add(new Label("MenuText", "Treasures: ", 650, 25, 1.0f));
+            components.Add(new Label("MenuText", "trs", 750, 50, 1.0f));
+            components.Add(new Label("MenuText", "Total weigh: ", 650, 75, 1.0f));
+            components.Add(new Label("MenuText", "kg", 750, 100, 1.0f));
+            components.Add(new Label("MenuText", "Total step: ", 650, 125, 1.0f));
+            components.Add(new Label("MenuText", "step", 750, 150, 1.0f));
 
-            weight = new Label("MenuText", "00", 680, 50, 1.0f);
-            step = new Label("MenuText", "0", 680, 100, 1.0f);
+            total = new Label("MenuText", "00", 680, 50, 1.0f);
+            weight = new Label("MenuText", "00", 680, 100, 1.0f);
+            step = new Label("MenuText", "0", 680, 150, 1.0f);
+            
         }
 
         public void updateTotalWeight(float weight)
@@ -36,6 +43,10 @@ namespace MiniGame
         public void updateTotalStep(int Step)
         {
             this.step.Text = Step.ToString();
+        }
+        public void updateTotalTreasure(int total)
+        {
+            this.total.Text = total.ToString();
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
@@ -49,6 +60,7 @@ namespace MiniGame
             //
             weight.Draw(gameTime, spriteBatch);
             step.Draw(gameTime, spriteBatch);
+            total.Draw(gameTime, spriteBatch);
             base.Draw(gameTime, spriteBatch);
         }
     }

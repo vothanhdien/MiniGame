@@ -9,7 +9,7 @@ namespace MiniGame
 {
     public class Button : Component
     {
-
+        Label lb = null;
         public Button(string strResource, string text, float left, float top, float depth)
         {
             _font = Global.loadSpriteFont("MenuText");
@@ -18,9 +18,8 @@ namespace MiniGame
             float stringLeft = left + _sprite.Width / 2 - (25 * text.Length) / 2;
             float stringTop = top + 20;
             Text = text;
-
-            //float newLeft = _sprite.Left + (_sprite.Left + _sprite.With)/2 - _text.Width / 2;
-            //float newTop = _text.Top + 20;
+            float newLeft = _sprite.Left + (_sprite.Width - text.Length*12) / 2;
+            lb = new Label("MenuText", text, newLeft , top, depth + 0.2f);
 
             //_text.Left = left + 400;
             //_text.Top = newTop;
@@ -30,8 +29,8 @@ namespace MiniGame
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             _sprite.Draw(gameTime, spriteBatch);
-            //spriteBatch.Draw(this.Textures[_iTexture], new Rectangle((int)Left, (int)Top, (int)(Width / scale), (int)(Height / scale)), null, Color, 0f, Vector2.Zero, SpriteEffects.None, _depth);
-            spriteBatch.DrawString(_font, Text, new Vector2(this._sprite.Left, _sprite.Top), Color.White, 0f, Vector2.Zero, 1.0f, SpriteEffects.None, Depth + 0.1f);
+            //spriteBatch.DrawString(_font, Text, new Vector2(this._sprite.Left, _sprite.Top), Color.White, 0f, Vector2.Zero, 1.0f, SpriteEffects.None, 1.0f);
+            lb.Draw(gameTime, spriteBatch);
             base.Draw(gameTime, spriteBatch);
         }
     }

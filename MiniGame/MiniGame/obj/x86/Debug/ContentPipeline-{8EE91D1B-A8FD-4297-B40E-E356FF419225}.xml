@@ -577,6 +577,60 @@
       <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\menu_button.xnb</Output>
       <Time>2017-09-27T22:25:03.1571985+07:00</Time>
     </Item>
+    <Item>
+      <Source>buttons\button_black.png</Source>
+      <Name>buttons\button_black</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\buttons\button_black.xnb</Output>
+      <Time>2017-12-23T10:09:52.2772725+07:00</Time>
+    </Item>
+    <Item>
+      <Source>buttons\button_blue.png</Source>
+      <Name>buttons\button_blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\buttons\button_blue.xnb</Output>
+      <Time>2017-12-23T10:09:52.2817926+07:00</Time>
+    </Item>
+    <Item>
+      <Source>buttons\button_green.png</Source>
+      <Name>buttons\button_green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\buttons\button_green.xnb</Output>
+      <Time>2017-12-23T10:09:52.2857765+07:00</Time>
+    </Item>
+    <Item>
+      <Source>buttons\button_grey.png</Source>
+      <Name>buttons\button_grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\buttons\button_grey.xnb</Output>
+      <Time>2017-12-23T10:09:52.2892789+07:00</Time>
+    </Item>
+    <Item>
+      <Source>buttons\button_organ.png</Source>
+      <Name>buttons\button_organ</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\buttons\button_organ.xnb</Output>
+      <Time>2017-12-23T10:09:52.2927813+07:00</Time>
+    </Item>
+    <Item>
+      <Source>buttons\button_red.png</Source>
+      <Name>buttons\button_red</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\buttons\button_red.xnb</Output>
+      <Time>2017-12-23T10:09:52.2962849+07:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{8EE91D1B-A8FD-4297-B40E-E356FF419225}</ContentProjectGUID>
@@ -584,10 +638,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGameContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGameContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGame\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGame\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

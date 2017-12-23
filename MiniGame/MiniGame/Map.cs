@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -185,6 +186,25 @@ namespace MiniGame
                 }
             }
             return ret;
+        }
+
+        public string convertToJson()
+        {
+            string json = "\"Map\":{\n"
+                + "\"Rows\": " + _rows + ",\n"
+                + "\"Cols\": " + _cols + ",\n"
+                + "\"Matrix\":[";
+
+            for (int i = 0; i < _rows; i++)
+            {
+                for (int j = 0; j < _cols; j++)
+                {
+                    json += logicMap[i, j] + ",";
+                }
+                json += "\n";
+            }
+            json += "]}";
+            return json;
         }
 
         #region create logic map

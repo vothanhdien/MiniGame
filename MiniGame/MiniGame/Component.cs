@@ -18,6 +18,17 @@ namespace MiniGame
 
         private float depth;
 
+        public bool isSelected(float x, float y)
+        {
+            return isSelected(new Vector2(x, y));
+        }
+
+        public bool isSelected(Vector2 pos)
+        {
+            return _sprite.IsSelected(pos);
+        }
+        
+
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             base.Draw(gameTime, spriteBatch);
@@ -57,5 +68,7 @@ namespace MiniGame
                 text = value;
             }
         }
+
+
     }
 }

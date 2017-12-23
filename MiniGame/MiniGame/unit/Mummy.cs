@@ -77,5 +77,10 @@ namespace MiniGame
         {
             base.Draw(gameTime, spriteBatch);
         }
+
+        public override string convertToJson()
+        {
+            return base.convertToJson();
+        }
     }
 }

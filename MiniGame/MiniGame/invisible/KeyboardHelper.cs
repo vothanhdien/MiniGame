@@ -24,5 +24,10 @@ namespace MiniGame
                 return CurrentState.IsKeyUp(key);
                 return false;
         }
+
+        public bool isPressAnykey()
+        {
+            return CurrentState.GetPressedKeys().Length > 0;
+        }
     }
 }

@@ -76,8 +76,12 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dialog\ConfirmDialog.cs" />
+    <Compile Include="dialog\AbstractDialog.cs" />
     <Compile Include="Component.cs" />
+    <Compile Include="InputTextDialog.cs" />
     <Compile Include="menu\Label.cs" />
+    <Compile Include="Log\MissionLog.cs" />
     <Compile Include="orther\AbstactModel.cs" />
     <Compile Include="orther\AbstractFactory.cs" />
     <Compile Include="menu\Button.cs" />
@@ -91,6 +95,7 @@
     <Compile Include="Map.cs" />
     <Compile Include="menu\Menu.cs" />
     <Compile Include="menu\SubMenu.cs" />
+    <Compile Include="dialog\ResultDialog.cs" />
     <Compile Include="unit\Monster.cs" />
     <Compile Include="invisible\MouseHelper.cs" />
     <Compile Include="unit\Mummy.cs" />
