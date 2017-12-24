@@ -19,14 +19,15 @@ namespace MiniGame
             solidTexture.SetData(new Color[] { Color.White });
 
 
-            components.Add(new Button("Button_blue", "EXIT", 450, 350, 0.8f));
-            components.Add(new Button("Button_blue", "RESTART", 250, 350, 0.8f));
-            components.Add(new Label("MenuText", "Your score: ", 160, 120, 1.0f));
-            components.Add(new Label("MenuText", "1st: ", 300, 175, 1.0f));
-            components.Add(new Label("MenuText", "2nd: ", 300, 200, 1.0f));
-            components.Add(new Label("MenuText", "3rd: ", 300, 225, 1.0f));
-            components.Add(new Label("MenuText", "4th: ", 300, 250, 1.0f));
-            components.Add(new Label("MenuText", "5th: ", 300, 275, 1.0f));
+            components.Add(new Button("Button_blue", "EXIT", 450, 350, 0.6f));
+            components.Add(new Button("Button_blue", "RESTART", 250, 350, 0.6f));
+            components.Add(new Button("Button_blue", "SAVE", 350, 350, 0.6f));
+            components.Add(new Label("MenuText", "Your score: ", 160, 120, 0.7f));
+            components.Add(new Label("MenuText", "1st: ", 300, 175, 0.7f));
+            components.Add(new Label("MenuText", "2nd: ", 300, 200, 0.7f));
+            components.Add(new Label("MenuText", "3rd: ", 300, 225, 0.7f));
+            components.Add(new Label("MenuText", "4th: ", 300, 250, 0.7f));
+            components.Add(new Label("MenuText", "5th: ", 300, 275, 0.7f));
 
             playerScore = new Label("MenuText", "00", 300, 120, 1.0f);
 
@@ -55,11 +56,11 @@ namespace MiniGame
                 }
             }
 
-            components[3].Text = "1st: "+ old[0];
-            components[4].Text = "2nd: "+ old[1];
-            components[5].Text = "3rd: "+ old[2];
-            components[6].Text = "4th: "+ old[3];
-            components[7].Text = "5th: "+ old[4];
+            components[4].Text = "1st: "+ old[0];
+            components[5].Text = "2nd: "+ old[1];
+            components[6].Text = "3rd: "+ old[2];
+            components[7].Text = "4th: "+ old[3];
+            components[8].Text = "5th: "+ old[4];
 
             Config.Instance.saveHighScore(old);
         }
@@ -80,7 +81,7 @@ namespace MiniGame
 
         public int getOption(Vector2 pos)
         {
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 3; i++)
             {
                 if (components[i].isSelected(pos))
                     return i;

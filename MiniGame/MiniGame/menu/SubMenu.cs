@@ -22,6 +22,9 @@ namespace MiniGame
 
 
             components.Add(new Button("Button_blue", "EXIT", 680, 200, 0.6f));
+            components.Add(new Button("Button_blue", "10x15", 680, 250, 0.6f));
+            components.Add(new Button("Button_blue", "15x15", 680, 300, 0.6f));
+            components.Add(new Button("Button_blue", "15x20", 680, 350, 0.6f));
             components.Add(new Label("MenuText", "Treasures: ", 650, 25, 0.7f));
             components.Add(new Label("MenuText", "trs", 750, 50, 0.7f));
             components.Add(new Label("MenuText", "Total weigh: ", 650, 75, 0.7f));
@@ -62,6 +65,17 @@ namespace MiniGame
             step.Draw(gameTime, spriteBatch);
             total.Draw(gameTime, spriteBatch);
             base.Draw(gameTime, spriteBatch);
+        }
+
+        public int getOption(Vector2 pos)
+        {
+            for(int i = 0; i < 4; i++)
+            {
+                if (components[i].isSelected(pos))
+                    return i;
+            }
+            return -1;
+
         }
     }
 }

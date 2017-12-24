@@ -36,15 +36,6 @@ namespace MiniGame
                
             }
             strOutput += "],";
-            //strOutput += "\n\"Monster\": [";
-            //for (int i = 0; i < monsterList.Count; i++)
-            //{
-            //    if(monsterList[i] is Mummy)
-            //    {
-            //        strOutput += monsterList[i].convertToJson() + ",\n";
-            //    }
-            //}
-            //strOutput += "]";
             strOutput += "\n\"Mummies\": [";
             for (int i = 0; i < monsterList.Count; i++)
             {
@@ -81,14 +72,26 @@ namespace MiniGame
 
             return strOutput;
         }
-        public bool outJsonFile(string fileName)
+        public bool outJsonFile()
         {
 
+            string fileName = createFileName();
             string json = "{" + toJson() + "}";
             
             System.IO.File.WriteAllText(fileName, json);
 
             return true;
+        }
+
+        private string createFileName()
+        {
+            DateTime time = DateTime.Now;
+            string fileName = "";
+            fileName += time.Year
+                + "-" + time.Month
+                + "-" + time.Day
+                + "-" + time.Hour + "_" + time.Minute + "_" + time.Second + ".json";
+            return fileName;
         }
     }
 }

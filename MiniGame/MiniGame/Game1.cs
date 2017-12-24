@@ -28,12 +28,31 @@ namespace MiniGame
         ResultDialog resultDialog;
         ConfirmDialog confirmDialog;
         Menu menu;
+        int currentRow = 15;
+        int currentCol = 20;
 
-        private void load(int rows, int cols, int numZombies, int numMummies, int numScorpions, int numTreasuress)
+        //private void load(int rows, int cols, int numZombies, int numMummies, int numScorpions, int numTreasuress)
+        private void load()
         {
+            int numTreasuress = 8;
+            int numZombies = 0;
+            int numMummies = 1;
+            int numScorpions = 1;
+            int cells = currentRow * currentCol;
+            if(cells >= 300)
+            {
+                numZombies = 2;
+                numMummies = 2;
+                numScorpions = 2;
+            }else if (cells >= 225)
+            {
+                numZombies = 1;
+                numMummies = 2;
+                numScorpions = 2;
+            }
             monsterList.RemoveAll(v => true);
             treasureList.RemoveAll(v => true);
-            Global.map = new Map(0, 0, "map\\", rows, cols);
+            Global.map = new Map(0, 0, "map\\", currentRow, currentCol);
             if (player == null)
                 player = (Player)UnitFactory.createInstance(Global.map.getEntrance(), UnitTypeEnum.CHARACTER);
             else
@@ -95,7 +114,7 @@ namespace MiniGame
             menu = new Menu();
             log = new MissionLog();
 
-            load(15, 20, 2, 2, 2, 8);
+            //load(currentRow, currentCol, 2, 2, 2, 8);
             
         }
         /// <summary>
@@ -114,17 +133,15 @@ namespace MiniGame
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || currentGameState == GameStateEnum.WINDOW_CLOSE)
                 this.Exit();
 
-            Global.playerPos.X = player.LogicX;
-            Global.playerPos.Y = player.LogicY;
+            
+
             Global.keyboardHelper.Update(gameTime);
             Global.mouseHelper.Update(gameTime);
-
-            Window.Title = player.LogicX + " : " + player.LogicY;
+            
             if (currentGameState == GameStateEnum.GAME_PAUSE)
             {
                 //Window.Title = " all step " + player.TotalStep + " treasuse: " + player.TreaseList.Count;
@@ -145,7 +162,8 @@ namespace MiniGame
             #region game load
             if (currentGameState == GameStateEnum.GAME_LOAD)
             {
-                load(15, 20, 2, 2, 2, 8);
+                //load(currentRow, currentCol, 2, 2, 2, 8);
+                load();
                 player.transact(Global.map.getEntrance());
                 currentGameState = GameStateEnum.GAME_START;
             }
@@ -163,6 +181,10 @@ namespace MiniGame
             #region game playing
             if (currentGameState == GameStateEnum.GAME_PLAYING)
             {
+                Global.playerPos.X = player.LogicX;
+                Global.playerPos.Y = player.LogicY;
+                
+
                 if (Global.keyboardHelper.IsKeyPressed(Keys.A))
                 {
                     player.setState(UnitStateEnum.MOVELEFT);
@@ -208,6 +230,7 @@ namespace MiniGame
                         currentGameState = GameStateEnum.GAME_END;
                     }
                 }
+
                 player.Update(gameTime);
 
                 int tn = treasureList.Count;
@@ -257,11 +280,43 @@ namespace MiniGame
                         case 1:
                             currentGameState = GameStateEnum.GAME_LOAD;
                             break;
+                        case 2:
+                            log.outJsonFile();
+                            break;
                     }
                 }
 
             }
             #endregion
+
+            if(currentGameState == GameStateEnum.GAME_PLAYING || currentGameState == GameStateEnum.GAME_START)
+            {
+                if (Global.mouseHelper.isLButtonUp())
+                {
+                    int result = subMenu.getOption(Global.mouseHelper.getCurrentMousePosition());
+                    switch (result)
+                    {
+                        case 0://exit
+                            currentGameState = GameStateEnum.GAME_END;
+                            break;
+                        case 1://10x15
+                            currentRow = 10;
+                            currentCol = 15;
+                            currentGameState = GameStateEnum.GAME_LOAD;
+                            break;
+                        case 2://15x15
+                            currentRow = 15;
+                            currentCol = 15;
+                            currentGameState = GameStateEnum.GAME_LOAD;
+                            break;
+                        case 3://15x20
+                            currentRow = 15;
+                            currentCol = 20;
+                            currentGameState = GameStateEnum.GAME_LOAD;
+                            break;
+                    }
+                }
+            }
 
             base.Update(gameTime);
         }
@@ -283,22 +338,25 @@ namespace MiniGame
             }
 
             #region draw unit
-            subMenu.Draw(gameTime, spriteBatch);
-            Global.map.Draw(gameTime, spriteBatch);
-            int n = monsterList.Count;
-            for (int i = 0; i < n; i++)
+            if (currentGameState == GameStateEnum.GAME_PLAYING || currentGameState == GameStateEnum.GAME_LOAD
+                || currentGameState == GameStateEnum.GAME_START || currentGameState == GameStateEnum.SHOW_RESULT)
             {
-                monsterList[i].Draw(gameTime, spriteBatch);
+                subMenu.Draw(gameTime, spriteBatch);
+                Global.map.Draw(gameTime, spriteBatch);
+                int n = monsterList.Count;
+                for (int i = 0; i < n; i++)
+                {
+                    monsterList[i].Draw(gameTime, spriteBatch);
+                }
+
+                n = treasureList.Count;
+                for (int i = 0; i < n; i++)
+                {
+                    treasureList[i].Draw(gameTime, spriteBatch);
+                }
+
+                player.Draw(gameTime, spriteBatch);
             }
-
-            n = treasureList.Count;
-            for (int i = 0; i < n; i++)
-            {
-                treasureList[i].Draw(gameTime, spriteBatch);
-            }
-
-            player.Draw(gameTime, spriteBatch);
-
             #endregion
 
             if (currentGameState == GameStateEnum.SHOW_RESULT)
