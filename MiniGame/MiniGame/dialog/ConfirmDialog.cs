@@ -29,7 +29,7 @@ namespace MiniGame
         }
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(solidTexture, new Rectangle(250, 200, 300, 150), null, Color.YellowGreen, 0f, Vector2.Zero, SpriteEffects.None, 0.7f);
+            spriteBatch.Draw(solidTexture, new Rectangle(250, 200, 300, 150), null, Color.YellowGreen, 0f, Vector2.Zero, SpriteEffects.None, 0.5f);
             int n = components.Count;
             for (int i = 0; i < n; i++)
             {

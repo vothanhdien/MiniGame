@@ -17,6 +17,9 @@
       "menu_button",
       "menu_button"
     ],
+    "Circle_button": [
+      "buttons/Play_Button"
+    ],
     "Button_red": [
       "buttons/button_red"
     ],
@@ -111,24 +114,6 @@
       "player/10",
       "player/11"
     ],
-    "Angel": [
-      "angel01",
-      "angel02",
-      "angel03",
-      "angel04",
-      "angel05",
-      "angel06",
-      "angel07",
-      "angel08",
-      "angel09",
-      "angel10",
-      "angel11",
-      "angel12",
-      "angel13",
-      "angel14",
-      "angel15"
-    ],
-    "Aura": [ "aura01", "aura02", "aura03", "aura04", "aura05", "aura06" ],
     "Island": [ "Starter_Island" ],
     "background": [ "background" ],
     "a": [ "a" ],

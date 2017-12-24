@@ -631,6 +631,24 @@
       <Output>C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\buttons\button_red.xnb</Output>
       <Time>2017-12-23T10:09:52.2962849+07:00</Time>
     </Item>
+    <Item>
+      <Source>buttons\Play_Button.png</Source>
+      <Name>buttons\Play_Button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\buttons\Play_Button.xnb</Output>
+      <Time>2017-12-24T11:26:25.0929007+07:00</Time>
+    </Item>
+    <Item>
+      <Source>background.jpg</Source>
+      <Name>background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\background.xnb</Output>
+      <Time>2017-12-24T11:40:37.7958895+07:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{8EE91D1B-A8FD-4297-B40E-E356FF419225}</ContentProjectGUID>

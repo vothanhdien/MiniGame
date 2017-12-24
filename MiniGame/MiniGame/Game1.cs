@@ -21,12 +21,13 @@ namespace MiniGame
         List<Unit> monsterList = new List<Unit>();
         List<Treasure> treasureList = new List<Treasure>();
         Player player = null;
-        GameStateEnum currentGameState = GameStateEnum.GAME_START;
+        GameStateEnum currentGameState = GameStateEnum.GAME_MENU;
         SubMenu subMenu;
         Random random;
         MissionLog log;
         ResultDialog resultDialog;
         ConfirmDialog confirmDialog;
+        Menu menu = new Menu();
 
         private void load(int rows, int cols, int numZombies, int numMummies, int numScorpions, int numTreasuress)
         {
@@ -135,7 +136,7 @@ namespace MiniGame
             Window.Title = player.LogicX + " : " + player.LogicY;
             if (currentGameState == GameStateEnum.GAME_PAUSE)
             {
-                Window.Title = " all step " + player.TotalStep + " treasuse: " + player.TreaseList.Count;
+                //Window.Title = " all step " + player.TotalStep + " treasuse: " + player.TreaseList.Count;
                 return;
             }
             #region game load
@@ -275,6 +276,12 @@ namespace MiniGame
             // TODO: Add your drawing code here
             this.spriteBatch.Begin(SpriteSortMode.FrontToBack,BlendState.AlphaBlend);
 
+            if(currentGameState == GameStateEnum.GAME_MENU)
+            {
+                menu.Draw(gameTime, spriteBatch);
+            }
+
+            #region draw unit
             subMenu.Draw(gameTime, spriteBatch);
             Global.map.Draw(gameTime, spriteBatch);
             int n = monsterList.Count;
@@ -291,10 +298,13 @@ namespace MiniGame
 
             player.Draw(gameTime, spriteBatch);
 
+            #endregion
+
             if (currentGameState == GameStateEnum.SHOW_RESULT)
             {
                 resultDialog.Draw(gameTime, spriteBatch);
             }
+            
             confirmDialog.Draw(gameTime, spriteBatch);
 
             this.spriteBatch.End();

@@ -86,3 +86,5 @@ C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGame
 C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\buttons\button_grey.xnb
 C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\buttons\button_organ.xnb
 C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\buttons\button_red.xnb
+C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\buttons\Play_Button.xnb
+C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\background.xnb
