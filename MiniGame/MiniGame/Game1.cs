@@ -48,17 +48,6 @@ namespace MiniGame
                 monsterList.Add(UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.SCORPION));
             for (int i = 0; i < numTreasuress; i++)
                 treasureList.Add((Treasure)UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.TREASURE));
-            //treasureList.Add((Treasure)UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.TREASURE));
-            //treasureList.Add((Treasure)UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.TREASURE));
-            //treasureList.Add((Treasure)UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.TREASURE));
-            //treasureList.Add((Treasure)UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.TREASURE));
-            //treasureList.Add((Treasure)UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.TREASURE));
-            //treasureList.Add((Treasure)UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.TREASURE));
-            //treasureList.Add((Treasure)UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.TREASURE));
-            //treasureList.Add((Treasure)UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.TREASURE));
-
-
-
             log.init(Global.map, treasureList, monsterList);
         }
 
@@ -201,7 +190,6 @@ namespace MiniGame
                 }
 
                 subMenu.updateTotalStep(player.TotalStep);
-                log.outJsonFile("out.json");
 
                 //Win game
                 Vector2 exit = Global.map.getExit();
@@ -210,8 +198,7 @@ namespace MiniGame
                     currentGameState = GameStateEnum.GAME_END;
 
                 }
-
-                // TODO: Add your update logic here
+                
                 int n = monsterList.Count;
                 for (int i = 0; i < n; i++)
                 {

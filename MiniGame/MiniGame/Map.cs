@@ -80,10 +80,8 @@ namespace MiniGame
             logicMap = createMap(Rows, Cols);
             exitWay = new List<Vector2>();
             initExitWay(getEntrance());
-
-            //Texture2D tmp = Global.Content.Load<Texture2D>(strResource + "00_00");
-            //_height = tmp.Height;
-            //_width = tmp.Width;
+            entrance = Vector2.Zero;
+            exit = Vector2.Zero;
             _height = _width = 32;
 
             loadTexture(strResource);
@@ -100,8 +98,8 @@ namespace MiniGame
                         textureMap[r, c] = new Sprite2D(_left + c * _width,_top + r * _height,Global.loadTextures("Wall"), 0.1f);
                     else
                         textureMap[r, c] = new Sprite2D(_left + c * _width,_top + r * _height, Global.loadTextures("Road"), 0.1f);
-                    //if(exitWay.Contains(new Vector2(r,c)))
-                    //    textureMap[r, c].Color = Color.Red;
+                    if (exitWay.Contains(new Vector2(c,r)))
+                        textureMap[r, c].Color = Color.Red;
                 }
 
         }
@@ -110,13 +108,13 @@ namespace MiniGame
         {
             if (start.X == getExit().X && start.Y == getExit().Y)
                 return true;
-            int[] dx = { 0, -1, 0, 1 };
-            int[] dy = { -1, 0, 1, 0 };
+            int[] dx = { -1, 0, 0, 1 };
+            int[] dy = { 0, -1, 1, 0 };
             for (int i = 0; i < 4; i++)
             {
                 float x = start.X + dx[i];
                 float y = start.Y + dy[i];
-                if (canGo(x, y))
+                if (canGo(x, y) && !exitWay.Contains(new Vector2(x,y)))
                 {
                     exitWay.Add(new Vector2(x, y));
                     if (initExitWay(new Vector2(x, y)))
