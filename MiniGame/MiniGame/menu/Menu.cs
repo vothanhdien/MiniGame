@@ -15,15 +15,14 @@ namespace MiniGame
         public Menu()
         {
 
-            background = Global.loadTextures("background");
-            components.Add(new Button("Circle_button", "", 450, 300, 0.8f));
-            components.Add(new Button("Button_blue", "YES", 270, 300, 0.8f));
-            components.Add(new Label("MenuText", "MINI PROJECT: CRAZY MAZE", 270, 200, 0.9f));
+            background = Global.loadTextures("Background");
+            components.Add(new Button("Circle_button", "", 350, 150, 0.8f));
+            components.Add(new Label("MenuText", "MINI PROJECT: CRAZY MAZE", 270, 100, 0.9f));
 
         }
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(background[0], new Rectangle(0, 0, 300, 150), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.7f);
+            spriteBatch.Draw(background[0], new Rectangle(0, 0, Global.WINDOW_WIDTH, Global.WINDOW_HEIGHT), null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.75f);
 
             int n = components.Count;
             for (int i = 0; i < n; i++)

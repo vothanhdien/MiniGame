@@ -27,7 +27,7 @@ namespace MiniGame
         MissionLog log;
         ResultDialog resultDialog;
         ConfirmDialog confirmDialog;
-        Menu menu = new Menu();
+        Menu menu;
 
         private void load(int rows, int cols, int numZombies, int numMummies, int numScorpions, int numTreasuress)
         {
@@ -96,12 +96,14 @@ namespace MiniGame
             Global.init(this.Content);
             Config.Instance.Load();
             // TODO: use this.Content to load your game content here
+            Global.WINDOW_WIDTH = GraphicsDevice.Viewport.Width;
+            Global.WINDOW_HEIGHT = GraphicsDevice.Viewport.Height;
 
-            
 
             subMenu = new SubMenu(this.GraphicsDevice);
             resultDialog = new ResultDialog(this.GraphicsDevice);
             confirmDialog = new ConfirmDialog(this.GraphicsDevice);
+            menu = new Menu();
             log = new MissionLog();
 
             load(15, 20, 2, 2, 2, 8);
@@ -139,6 +141,18 @@ namespace MiniGame
                 //Window.Title = " all step " + player.TotalStep + " treasuse: " + player.TreaseList.Count;
                 return;
             }
+            #region show menu
+            if(currentGameState == GameStateEnum.GAME_MENU)
+            {
+                if (Global.mouseHelper.isLButtonUp())
+                {
+                    if (menu.getOption(Global.mouseHelper.getCurrentMousePosition()) == 0)
+                        currentGameState = GameStateEnum.GAME_LOAD;
+                    
+                }
+            }
+            #endregion
+
             #region game load
             if (currentGameState == GameStateEnum.GAME_LOAD)
             {
@@ -274,9 +288,9 @@ namespace MiniGame
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            this.spriteBatch.Begin(SpriteSortMode.FrontToBack,BlendState.AlphaBlend);
+            this.spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend);
 
-            if(currentGameState == GameStateEnum.GAME_MENU)
+            if (currentGameState == GameStateEnum.GAME_MENU)
             {
                 menu.Draw(gameTime, spriteBatch);
             }
@@ -304,8 +318,9 @@ namespace MiniGame
             {
                 resultDialog.Draw(gameTime, spriteBatch);
             }
-            
-            confirmDialog.Draw(gameTime, spriteBatch);
+            if (currentGameState == GameStateEnum.GAME_END) { 
+                confirmDialog.Draw(gameTime, spriteBatch);
+            }
 
             this.spriteBatch.End();
             base.Draw(gameTime);

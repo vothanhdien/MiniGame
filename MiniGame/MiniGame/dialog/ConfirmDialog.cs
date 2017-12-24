@@ -18,9 +18,9 @@ namespace MiniGame
             solidTexture.SetData(new Color[] { Color.White });
 
 
-            components.Add(new Button("Button_blue", "NO", 450, 300, 0.8f));
-            components.Add(new Button("Button_blue", "YES", 270, 300, 0.8f));
-            components.Add(new Label("MenuText", "123", 270, 200, 1.0f));
+            components.Add(new Button("Button_blue", "NO", 450, 300, 0.6f));
+            components.Add(new Button("Button_blue", "YES", 270, 300, 0.6f));
+            components.Add(new Label("MenuText", "123", 270, 200, 0.7f));
 
         }
         public void setText(String text)

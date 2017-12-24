@@ -17,6 +17,9 @@ namespace MiniGame
         public static KeyboardHelper keyboardHelper = new KeyboardHelper();
         public static MouseHelper mouseHelper = new MouseHelper();
 
+        public static int WINDOW_WIDTH;
+        public static int WINDOW_HEIGHT;
+
         public static void init(ContentManager content)
         {
             Content = content;

@@ -114,8 +114,7 @@
       "player/10",
       "player/11"
     ],
-    "Island": [ "Starter_Island" ],
-    "background": [ "background" ],
+    "Background": [ "background" ],
     "a": [ "a" ],
     "b": [ "b" ],
     "c": [ "c" ],

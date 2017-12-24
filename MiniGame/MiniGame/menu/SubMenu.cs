@@ -21,17 +21,17 @@ namespace MiniGame
             solidTexture.SetData(new Color[] { Color.White });
 
 
-            components.Add(new Button("Button_blue", "EXIT", 680, 200, 0.8f));
-            components.Add(new Label("MenuText", "Treasures: ", 650, 25, 1.0f));
-            components.Add(new Label("MenuText", "trs", 750, 50, 1.0f));
-            components.Add(new Label("MenuText", "Total weigh: ", 650, 75, 1.0f));
-            components.Add(new Label("MenuText", "kg", 750, 100, 1.0f));
-            components.Add(new Label("MenuText", "Total step: ", 650, 125, 1.0f));
-            components.Add(new Label("MenuText", "step", 750, 150, 1.0f));
+            components.Add(new Button("Button_blue", "EXIT", 680, 200, 0.6f));
+            components.Add(new Label("MenuText", "Treasures: ", 650, 25, 0.7f));
+            components.Add(new Label("MenuText", "trs", 750, 50, 0.7f));
+            components.Add(new Label("MenuText", "Total weigh: ", 650, 75, 0.7f));
+            components.Add(new Label("MenuText", "kg", 750, 100, 0.7f));
+            components.Add(new Label("MenuText", "Total step: ", 650, 125, 0.7f));
+            components.Add(new Label("MenuText", "step", 750, 150, 0.7f));
 
-            total = new Label("MenuText", "00", 680, 50, 1.0f);
-            weight = new Label("MenuText", "00", 680, 100, 1.0f);
-            step = new Label("MenuText", "0", 680, 150, 1.0f);
+            total = new Label("MenuText", "00", 680, 50, 0.7f);
+            weight = new Label("MenuText", "00", 680, 100, 0.7f);
+            step = new Label("MenuText", "0", 680, 150, 0.7f);
             
         }
 

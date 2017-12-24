@@ -26,6 +26,8 @@ namespace MiniGame
         protected Vector2 entrance = Vector2.Zero;
         protected Vector2 exit = Vector2.Zero;
 
+        private List<Vector2> exitWay =null;
+
         public float Height
         {
             get
@@ -76,6 +78,8 @@ namespace MiniGame
             Cols = cols;
 
             logicMap = createMap(Rows, Cols);
+            exitWay = new List<Vector2>();
+            initExitWay(getEntrance());
 
             //Texture2D tmp = Global.Content.Load<Texture2D>(strResource + "00_00");
             //_height = tmp.Height;
@@ -84,6 +88,7 @@ namespace MiniGame
 
             loadTexture(strResource);
         }
+
         public void loadTexture(string strResource)
         {
 
@@ -95,18 +100,33 @@ namespace MiniGame
                         textureMap[r, c] = new Sprite2D(_left + c * _width,_top + r * _height,Global.loadTextures("Wall"), 0.1f);
                     else
                         textureMap[r, c] = new Sprite2D(_left + c * _width,_top + r * _height, Global.loadTextures("Road"), 0.1f);
+                    //if(exitWay.Contains(new Vector2(r,c)))
+                    //    textureMap[r, c].Color = Color.Red;
                 }
 
         }
 
-        //private List<Texture2D> CreateListTexture(string str)
-        //{
-        //    List<Texture2D> ret = new List<Texture2D>();
-        //    ret.Add(Global.Content.Load<Texture2D>(str));
-        //    return ret;
-        //}
-
-
+        private bool initExitWay(Vector2 start)
+        {
+            if (start.X == getExit().X && start.Y == getExit().Y)
+                return true;
+            int[] dx = { 0, -1, 0, 1 };
+            int[] dy = { -1, 0, 1, 0 };
+            for (int i = 0; i < 4; i++)
+            {
+                float x = start.X + dx[i];
+                float y = start.Y + dy[i];
+                if (canGo(x, y))
+                {
+                    exitWay.Add(new Vector2(x, y));
+                    if (initExitWay(new Vector2(x, y)))
+                        return true;
+                    exitWay.RemoveAt(exitWay.Count - 1);
+                }
+            }
+            return false;
+        }
+        
         public override void Update(GameTime gameTime)
         {
             //base.Update(gameTime);
@@ -216,7 +236,7 @@ namespace MiniGame
             //printMap(matrix);
             return matrix;
         }
-
+        
         private void finishMap(int[,] matrix)
         {
             int rows = matrix.GetLength(0);

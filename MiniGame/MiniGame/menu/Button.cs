@@ -19,7 +19,7 @@ namespace MiniGame
             float stringTop = top + 20;
             Text = text;
             float newLeft = _sprite.Left + (_sprite.Width - text.Length*12) / 2;
-            lb = new Label("MenuText", text, newLeft , top, depth + 0.2f);
+            lb = new Label("MenuText", text, newLeft , top, depth + 0.1f);
 
             //_text.Left = left + 400;
             //_text.Top = newTop;
