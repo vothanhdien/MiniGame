@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +19,7 @@ namespace MiniGame
         public static KeyboardHelper keyboardHelper = new KeyboardHelper();
         public static MouseHelper mouseHelper = new MouseHelper();
 
+        public static SoundEffect ghostSound, zombieSound;
         public static int WINDOW_WIDTH;
         public static int WINDOW_HEIGHT;
 
@@ -47,6 +50,17 @@ namespace MiniGame
         {
             string font = Config.LoadSpriteFont(strResoure);
             return Content.Load<SpriteFont>(strResoure);
+        }
+
+        public static SoundEffect loadSoundEffect(string strResoure)
+        {
+            string effect = Config.LoadSoundEffect(strResoure);
+            return Content.Load<SoundEffect>(effect);
+        }
+
+        public static Song loadSong()
+        {
+            return Content.Load<Song>("song/happy");
         }
     }
 }

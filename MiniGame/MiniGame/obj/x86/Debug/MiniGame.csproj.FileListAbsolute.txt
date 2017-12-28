@@ -88,3 +88,12 @@ C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGame
 C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\buttons\button_red.xnb
 C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\buttons\Play_Button.xnb
 C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\background.xnb
+C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\sound\collect_treasure.xnb
+C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\song\happy.xnb
+C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\song\happy.wma
+C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\sound\NFF-zomboid.xnb
+C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\sound\NFF-ghost.xnb
+C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\sound\Game-Over.xnb
+C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\dragon_statue.xnb
+C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\sword.xnb
+C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\tool.xnb

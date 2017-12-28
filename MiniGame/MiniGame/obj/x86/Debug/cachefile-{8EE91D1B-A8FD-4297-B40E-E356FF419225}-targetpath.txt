@@ -70,3 +70,12 @@ Content\buttons\button_organ.xnb
 Content\buttons\button_red.xnb
 Content\buttons\Play_Button.xnb
 Content\background.xnb
+Content\sound\collect_treasure.xnb
+Content\song\happy.xnb
+Content\song\happy.wma
+Content\sound\NFF-zomboid.xnb
+Content\sound\NFF-ghost.xnb
+Content\sound\Game-Over.xnb
+Content\treasure\dragon_statue.xnb
+Content\treasure\sword.xnb
+Content\treasure\tool.xnb

@@ -61,12 +61,22 @@ namespace MiniGame
             //return (jsonConfig["Textures"][unitName] as JArray).Select(v => v.ToString()).ToArray();
         }
 
+        internal static string LoadSoundEffect(string strResoure)
+        {
+            JToken token = jsonConfig["Sound"][strResoure];
+            var o = token.Select(v => v.ToString());
+
+            //return o.ToString();
+            return token.ToString();
+        }
+
         public static string LoadSpriteFont(String fontName)
         {
             JToken token = jsonConfig["SpriteFont"][fontName];
             var o = token.Select(v => v.ToString());
-            
+
             return o.ToString();
+            
         }
 
         public float[] getHighScore()

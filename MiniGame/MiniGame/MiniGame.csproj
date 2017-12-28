@@ -76,10 +76,12 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnnounceDialog.cs" />
     <Compile Include="dialog\ConfirmDialog.cs" />
     <Compile Include="dialog\AbstractDialog.cs" />
     <Compile Include="Component.cs" />
     <Compile Include="InputTextDialog.cs" />
+    <Compile Include="unit\Jewelry.cs" />
     <Compile Include="menu\Label.cs" />
     <Compile Include="Log\MissionLog.cs" />
     <Compile Include="orther\AbstactModel.cs" />
@@ -96,6 +98,8 @@
     <Compile Include="menu\Menu.cs" />
     <Compile Include="menu\SubMenu.cs" />
     <Compile Include="dialog\ResultDialog.cs" />
+    <Compile Include="unit\Statue.cs" />
+    <Compile Include="unit\Tool.cs" />
     <Compile Include="unit\Monster.cs" />
     <Compile Include="invisible\MouseHelper.cs" />
     <Compile Include="unit\Mummy.cs" />
@@ -110,6 +114,7 @@
     <Compile Include="unit\Unit.cs" />
     <Compile Include="orther\UnitFactory.cs" />
     <Compile Include="unit\Zombie.cs" />
+    <Compile Include="unit\Weapon.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

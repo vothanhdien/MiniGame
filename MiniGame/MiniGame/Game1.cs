@@ -22,15 +22,20 @@ namespace MiniGame
         List<Treasure> treasureList = new List<Treasure>();
         Player player = null;
         GameStateEnum currentGameState = GameStateEnum.GAME_MENU;
+        DialogEnum dialogEven = DialogEnum.NONE;
         SubMenu subMenu;
         Random random;
         MissionLog log;
         ResultDialog resultDialog;
         ConfirmDialog confirmDialog;
+        AnnounceDialog annouceDialog;
+        InputTextDialog inputDialog;
         Menu menu;
         int currentRow = 15;
         int currentCol = 20;
-
+        Song music;
+        SoundEffect collect, endGame;
+        string playerName = "";
         //private void load(int rows, int cols, int numZombies, int numMummies, int numScorpions, int numTreasuress)
         private void load()
         {
@@ -65,9 +70,20 @@ namespace MiniGame
                 monsterList.Add(UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.MUMMY));
             for (int i = 0; i < numScorpions; i++)
                 monsterList.Add(UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.SCORPION));
-            for (int i = 0; i < numTreasuress; i++)
-                treasureList.Add((Treasure)UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.TREASURE));
+            for (int i = 0; i < numTreasuress/4; i++)
+                treasureList.Add((Treasure)UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.JEWELRY));
+            for (int i = 0; i < numTreasuress / 4; i++)
+                treasureList.Add((Treasure)UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.TOOL));
+            for (int i = 0; i < numTreasuress / 4; i++)
+                treasureList.Add((Treasure)UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.WEAPON));
+            for (int i = 0; i < numTreasuress / 4; i++)
+                treasureList.Add((Treasure)UnitFactory.createInstance(a[random.Next(a.Count)], UnitTypeEnum.STATURE));
             log.init(Global.map, treasureList, monsterList);
+
+            MediaPlayer.Stop();
+            MediaPlayer.IsRepeating = true;
+            MediaPlayer.Play(music);
+            player.setPlayerName(playerName);
         }
 
         public Game1()
@@ -111,11 +127,18 @@ namespace MiniGame
             subMenu = new SubMenu(this.GraphicsDevice);
             resultDialog = new ResultDialog(this.GraphicsDevice);
             confirmDialog = new ConfirmDialog(this.GraphicsDevice);
+            annouceDialog = new AnnounceDialog(this.GraphicsDevice);
+            inputDialog = new InputTextDialog(this.GraphicsDevice);
             menu = new Menu();
             log = new MissionLog();
-
+            music = Global.loadSong();
+            collect = Global.loadSoundEffect("Collect-sound");
+            endGame = Global.loadSoundEffect("Game-Over");
+            Global.ghostSound = Global.loadSoundEffect("Ghost");
+            Global.zombieSound = Global.loadSoundEffect("Zombie");
             //load(currentRow, currentCol, 2, 2, 2, 8);
-            
+
+
         }
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
@@ -133,6 +156,7 @@ namespace MiniGame
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || currentGameState == GameStateEnum.WINDOW_CLOSE)
                 this.Exit();
@@ -141,7 +165,49 @@ namespace MiniGame
 
             Global.keyboardHelper.Update(gameTime);
             Global.mouseHelper.Update(gameTime);
-            
+
+            if (dialogEven == DialogEnum.SHOW_ANNOUNCE)
+            {
+                if (Global.mouseHelper.isLButtonUp())
+                {
+                    if (annouceDialog.getOption(Global.mouseHelper.getCurrentMousePosition()) == 0)
+                        dialogEven = DialogEnum.NONE;
+                    dialogEven = DialogEnum.NONE;
+                }
+                return;
+            }
+            if(dialogEven == DialogEnum.INPUTTEXT)
+            {
+                if (Global.keyboardHelper.IsKeyPressed(Keys.Back))
+                {
+                    playerName = "";
+                    inputDialog.setText(playerName);
+                }
+                if (Global.keyboardHelper.IsKeyPressed(Keys.Enter))
+                { 
+                   dialogEven = DialogEnum.NONE;
+
+
+                    currentGameState = GameStateEnum.GAME_LOAD;
+                }
+                if (Global.mouseHelper.isLButtonUp())
+                {
+                    if (annouceDialog.getOption(Global.mouseHelper.getCurrentMousePosition()) == 0)
+                        dialogEven = DialogEnum.NONE;
+                    dialogEven = DialogEnum.NONE;
+
+                    currentGameState = GameStateEnum.GAME_LOAD;
+                }
+                if (Global.keyboardHelper.isPressAnykey())
+                {
+                     Keys k = Global.keyboardHelper.getKeyUp();
+                    playerName += k.ToString();
+                    inputDialog.setText(playerName);
+                }
+
+                return;
+            }
+
             if (currentGameState == GameStateEnum.GAME_PAUSE)
             {
                 //Window.Title = " all step " + player.TotalStep + " treasuse: " + player.TreaseList.Count;
@@ -153,7 +219,9 @@ namespace MiniGame
                 if (Global.mouseHelper.isLButtonUp())
                 {
                     if (menu.getOption(Global.mouseHelper.getCurrentMousePosition()) == 0)
-                        currentGameState = GameStateEnum.GAME_LOAD;
+                    {
+                        dialogEven = DialogEnum.INPUTTEXT;
+                    }
                     
                 }
             }
@@ -241,6 +309,7 @@ namespace MiniGame
                     {
                         if (player.collectTreasure(treasureList[i]))
                         {
+                            collect.Play();
                             treasureList.RemoveAt(i);
                             subMenu.updateTotalWeight(player.getTotalWeight());
                             subMenu.updateTotalTreasure(player.TreaseList.Count);
@@ -261,6 +330,9 @@ namespace MiniGame
                     float score = 3 * count - player.TotalStep;
                     playerScore = score > 0 ? score : 0;
                 }
+                MediaPlayer.Stop();
+                endGame.Play();
+
                 resultDialog.updateResultDialog(playerScore);
                 currentGameState = GameStateEnum.SHOW_RESULT;
             }
@@ -282,6 +354,8 @@ namespace MiniGame
                             break;
                         case 2:
                             log.outJsonFile();
+                            annouceDialog.setText("File have been save!");
+                            dialogEven = DialogEnum.SHOW_ANNOUNCE;
                             break;
                     }
                 }
@@ -338,7 +412,7 @@ namespace MiniGame
             }
 
             #region draw unit
-            if (currentGameState == GameStateEnum.GAME_PLAYING || currentGameState == GameStateEnum.GAME_LOAD
+            if (currentGameState == GameStateEnum.GAME_PLAYING /*|| currentGameState == GameStateEnum.GAME_LOAD*/
                 || currentGameState == GameStateEnum.GAME_START || currentGameState == GameStateEnum.SHOW_RESULT)
             {
                 subMenu.Draw(gameTime, spriteBatch);
@@ -366,7 +440,14 @@ namespace MiniGame
             if (currentGameState == GameStateEnum.GAME_END) { 
                 confirmDialog.Draw(gameTime, spriteBatch);
             }
-
+            if(dialogEven == DialogEnum.SHOW_ANNOUNCE)
+            {
+                annouceDialog.Draw(gameTime, spriteBatch);
+            }
+            if (dialogEven == DialogEnum.INPUTTEXT)
+            {
+                inputDialog.Draw(gameTime, spriteBatch);
+            }
             this.spriteBatch.End();
             base.Draw(gameTime);
         }

@@ -649,6 +649,79 @@
       <Output>C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\background.xnb</Output>
       <Time>2017-12-24T11:40:37.7958895+07:00</Time>
     </Item>
+    <Item>
+      <Source>sound\collect_treasure.wav</Source>
+      <Name>sound\collect_treasure</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\sound\collect_treasure.xnb</Output>
+      <Time>2017-12-26T01:19:00.1431281+07:00</Time>
+    </Item>
+    <Item>
+      <Source>song\happy.mp3</Source>
+      <Name>song\happy</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\song\happy.xnb</Output>
+      <Extra>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\song\happy.wma</Extra>
+      <Time>2017-12-26T01:18:38.2640407+07:00</Time>
+    </Item>
+    <Item>
+      <Source>sound\NFF-zomboid.wav</Source>
+      <Name>sound\NFF-zomboid</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\sound\NFF-zomboid.xnb</Output>
+      <Time>2017-12-26T02:02:28.1637486+07:00</Time>
+    </Item>
+    <Item>
+      <Source>sound\NFF-ghost.wav</Source>
+      <Name>sound\NFF-ghost</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\sound\NFF-ghost.xnb</Output>
+      <Time>2017-12-26T02:02:38.7664206+07:00</Time>
+    </Item>
+    <Item>
+      <Source>sound\Game-Over.wav</Source>
+      <Name>sound\Game-Over</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\sound\Game-Over.xnb</Output>
+      <Time>2017-12-26T02:07:34.7266534+07:00</Time>
+    </Item>
+    <Item>
+      <Source>treasure\dragon_statue.png</Source>
+      <Name>treasure\dragon_statue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\dragon_statue.xnb</Output>
+      <Time>2017-12-28T19:46:52.2791134+07:00</Time>
+    </Item>
+    <Item>
+      <Source>treasure\sword.png</Source>
+      <Name>treasure\sword</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\sword.xnb</Output>
+      <Time>2017-12-28T19:31:12.0228566+07:00</Time>
+    </Item>
+    <Item>
+      <Source>treasure\tool.png</Source>
+      <Name>treasure\tool</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\treasure\tool.xnb</Output>
+      <Time>2017-12-28T19:32:23.1994026+07:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{8EE91D1B-A8FD-4297-B40E-E356FF419225}</ContentProjectGUID>
@@ -656,10 +729,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGameContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGame\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGame\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\vtdien\Documents\Visual Studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGameContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\vtdien\documents\visual studio 2015\Projects\MiniGame\MiniGame\MiniGame\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

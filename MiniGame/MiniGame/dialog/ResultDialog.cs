@@ -22,12 +22,12 @@ namespace MiniGame
             components.Add(new Button("Button_blue", "EXIT", 450, 350, 0.6f));
             components.Add(new Button("Button_blue", "RESTART", 250, 350, 0.6f));
             components.Add(new Button("Button_blue", "SAVE", 350, 350, 0.6f));
-            components.Add(new Label("MenuText", "Your score: ", 160, 120, 0.7f));
-            components.Add(new Label("MenuText", "1st: ", 300, 175, 0.7f));
-            components.Add(new Label("MenuText", "2nd: ", 300, 200, 0.7f));
-            components.Add(new Label("MenuText", "3rd: ", 300, 225, 0.7f));
-            components.Add(new Label("MenuText", "4th: ", 300, 250, 0.7f));
-            components.Add(new Label("MenuText", "5th: ", 300, 275, 0.7f));
+            components.Add(new Label("MenuText", "Your score: ", 160, 120, 0.65f));
+            components.Add(new Label("MenuText", "1st: ", 300, 175, 0.65f));
+            components.Add(new Label("MenuText", "2nd: ", 300, 200, 0.65f));
+            components.Add(new Label("MenuText", "3rd: ", 300, 225, 0.65f));
+            components.Add(new Label("MenuText", "4th: ", 300, 250, 0.65f));
+            components.Add(new Label("MenuText", "5th: ", 300, 275, 0.65f));
 
             playerScore = new Label("MenuText", "00", 300, 120, 1.0f);
 

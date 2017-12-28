@@ -3,6 +3,15 @@
 	"Scale_X" : 0.8,
 	"Scale_Y" : 0.8,
   "Textures": {
+    "Statue": [
+      "treasure/dragon_statue"
+    ],
+    "Sword": [
+      "treasure/sword"
+    ],
+    "Tool": [
+      "treasure/tool"
+    ],
     "Button": [
       "menu_button",
       "menu_button",
@@ -154,5 +163,12 @@
   },
   "SpriteFont": {
     "MenuText": "menuText"
+  },
+  "Sound": {
+    "Background-sound": "sound/happy",
+    "Collect-sound": "sound/collect_treasure",
+    "Ghost": "sound/NFF-ghost",
+    "Game-Over": "sound/Game-Over",
+    "Zombie": "sound/NFF-zomboid"
   }
 }

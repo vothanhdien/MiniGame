@@ -82,5 +82,11 @@ namespace MiniGame
         {
             return base.convertToJson();
         }
+
+        public override void transact(float X, float Y)
+        {
+            Global.ghostSound.Play();
+            base.transact(X, Y);
+        }
     }
 }

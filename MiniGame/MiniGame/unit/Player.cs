@@ -17,6 +17,8 @@ namespace MiniGame
 
         private float totalWeight = 0;
 
+        private Component playerName;
+
         public List<Treasure> TreaseList
         {
             get
@@ -55,8 +57,14 @@ namespace MiniGame
             return true;
         }
 
+        public void setPlayerName (string name)
+        {
+            playerName.Text = name;
+        }
+
         public Player(float left, float top, List<Texture2D> textures, float depth = 0.3F) : base(left, top, textures, depth)
         {
+            playerName = new Label("MenuText", "", left, top,0.3f);
         }
 
         public static Player getInstance(float left, float top, List<Texture2D> textures, float depth = 0.3f)
@@ -96,12 +104,14 @@ namespace MiniGame
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
+            playerName.Draw(gameTime, spriteBatch);
             base.Draw(gameTime, spriteBatch);
         }
 
         public override void transact(float X, float Y)
         {
             TotalStep++;
+
             base.transact(X, Y);
         }
 

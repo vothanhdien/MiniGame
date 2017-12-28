@@ -139,5 +139,11 @@ namespace MiniGame
         {
             base.Draw(gameTime, spriteBatch);
         }
+
+        public override void transact(float X, float Y)
+        {
+            Global.zombieSound.Play();
+            base.transact(X, Y);
+        }
     }
 }
