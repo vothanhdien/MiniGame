@@ -28,6 +28,8 @@ namespace MiniGame
         public Keys getKeyUp()
         {
             Keys[] key = CurrentState.GetPressedKeys();
+            //if (CurrentState.IsKeyUp(key[key.Length - 1]))
+            //    return key[key.Length - 1];
             return key[0];
         }
 

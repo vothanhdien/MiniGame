@@ -30,7 +30,7 @@ namespace MiniGame
 
         public static float TEXTURE_WIDTH = 32;
 
-        public static Vector2 playerPos = Vector2.Zero;
+        //public static Vector2 playerPos = Vector2.Zero;
 
 
         public static List<Texture2D> loadTextures(string strResource)

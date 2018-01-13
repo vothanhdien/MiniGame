@@ -33,16 +33,16 @@ namespace MiniGame
                     return Player.getInstance(X, Y, texs,0.25f);
                 case UnitTypeEnum.JEWELRY:
                     texs = Global.loadTextures("Treasure");
-                    return new Treasure(X, Y, texs,0.2f);
+                    return new Jewelry(X, Y, texs,0.2f);
                 case UnitTypeEnum.WEAPON:
                     texs = Global.loadTextures("Sword");
-                    return new Treasure(X, Y, texs, 0.2f);
+                    return new Weapon(X, Y, texs, 0.2f);
                 case UnitTypeEnum.TOOL:
                     texs = Global.loadTextures("Tool");
-                    return new Treasure(X, Y, texs, 0.2f);
+                    return new Tool(X, Y, texs, 0.2f);
                 case UnitTypeEnum.STATURE:
                     texs = Global.loadTextures("Statue");
-                    return new Treasure(X, Y, texs, 0.2f);
+                    return new Statue(X, Y, texs, 0.2f);
                 default:
                     return null;
             }

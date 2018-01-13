@@ -77,6 +77,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnnounceDialog.cs" />
+    <Compile Include="controller\Controller.cs" />
+    <Compile Include="controller\EnemyController.cs" />
     <Compile Include="dialog\ConfirmDialog.cs" />
     <Compile Include="dialog\AbstractDialog.cs" />
     <Compile Include="Component.cs" />
@@ -100,20 +102,20 @@
     <Compile Include="dialog\ResultDialog.cs" />
     <Compile Include="unit\Statue.cs" />
     <Compile Include="unit\Tool.cs" />
-    <Compile Include="unit\Monster.cs" />
+    <Compile Include="Enemy\Monster.cs" />
     <Compile Include="invisible\MouseHelper.cs" />
-    <Compile Include="unit\Mummy.cs" />
+    <Compile Include="Enemy\Mummy.cs" />
     <Compile Include="unit\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="unit\PublicEnum.cs" />
-    <Compile Include="unit\Scorpion.cs" />
+    <Compile Include="Enemy\Scorpion.cs" />
     <Compile Include="orther\Sprite2D.cs" />
     <Compile Include="unit\Treasure.cs" />
     <Compile Include="unit\Unit.cs" />
     <Compile Include="orther\UnitFactory.cs" />
-    <Compile Include="unit\Zombie.cs" />
+    <Compile Include="Enemy\Zombie.cs" />
     <Compile Include="unit\Weapon.cs" />
   </ItemGroup>
   <ItemGroup>

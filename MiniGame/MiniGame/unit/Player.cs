@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using MiniGame.controller;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace MiniGame
 
         private float totalWeight = 0;
 
-        private Component playerName;
+        private Label playerName;
 
         public List<Treasure> TreaseList
         {
@@ -64,7 +65,7 @@ namespace MiniGame
 
         public Player(float left, float top, List<Texture2D> textures, float depth = 0.3F) : base(left, top, textures, depth)
         {
-            playerName = new Label("MenuText", "", left, top,0.3f);
+            playerName = new Label("MenuText", "", left, top - 10 ,0.3f);
         }
 
         public static Player getInstance(float left, float top, List<Texture2D> textures, float depth = 0.3f)
@@ -111,7 +112,8 @@ namespace MiniGame
         public override void transact(float X, float Y)
         {
             TotalStep++;
-
+            playerName.transact(X * Global.TEXTURE_WIDTH, Y * Global.TEXTURE_WIDTH - 10);
+            EnemyController.PlayerMove(new Vector2(X,Y));
             base.transact(X, Y);
         }
 

@@ -29,11 +29,40 @@ namespace MiniGame
             string strOutput = "";
             strOutput += map.convertToJson() + ",";
 
-            strOutput += "\n\"Treasure\": [";
+            strOutput += "\n\"Tools\": [";
             for (int i = 0; i < treasurelist.Count; i++)
             {
-                strOutput += treasurelist[i].convertToJson() + ",\n";
-               
+                if (treasurelist[i] is Tool)
+                {
+                    strOutput += treasurelist[i].convertToJson() + ",\n";
+                }
+            }
+            strOutput += "],";
+            strOutput += "\n\"Weapons\": [";
+            for (int i = 0; i < treasurelist.Count; i++)
+            {
+                if (treasurelist[i] is Weapon)
+                {
+                    strOutput += treasurelist[i].convertToJson() + ",\n";
+                }
+            }
+            strOutput += "],";
+            strOutput += "\n\"Jewelrys\": [";
+            for (int i = 0; i < treasurelist.Count; i++)
+            {
+                if (treasurelist[i] is Jewelry )
+                {
+                    strOutput += treasurelist[i].convertToJson() + ",\n";
+                }
+            }
+            strOutput += "],";
+            strOutput += "\n\"Statues\": [";
+            for (int i = 0; i < treasurelist.Count; i++)
+            {
+                if (treasurelist[i] is Statue)
+                {
+                    strOutput += treasurelist[i].convertToJson() + ",\n";
+                }
             }
             strOutput += "],";
             strOutput += "\n\"Mummies\": [";

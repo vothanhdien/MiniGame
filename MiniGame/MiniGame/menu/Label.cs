@@ -24,9 +24,10 @@ namespace MiniGame
             base.Draw(gameTime, spriteBatch);
         }
 
-        public void aksjdbaskjdbasjkd()
+        public void transact(float left, float top)
         {
-
+            _left = left;
+            _top = top;
         }
     }
 }

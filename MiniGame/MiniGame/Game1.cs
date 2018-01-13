@@ -154,9 +154,12 @@ namespace MiniGame
         /// checking for collisions, gathering input, and playing audio.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
+
+        float t = 0;
+        float dt = 0.25f;
         protected override void Update(GameTime gameTime)
         {
-
+            t += dt;
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || currentGameState == GameStateEnum.WINDOW_CLOSE)
                 this.Exit();
@@ -183,26 +186,29 @@ namespace MiniGame
                     playerName = "";
                     inputDialog.setText(playerName);
                 }
-                if (Global.keyboardHelper.IsKeyPressed(Keys.Enter))
+                else if (Global.keyboardHelper.IsKeyPressed(Keys.Enter))
                 { 
-                   dialogEven = DialogEnum.NONE;
-
-
+                    dialogEven = DialogEnum.NONE;
                     currentGameState = GameStateEnum.GAME_LOAD;
                 }
-                if (Global.mouseHelper.isLButtonUp())
+                else if (Global.mouseHelper.isLButtonUp())
                 {
                     if (annouceDialog.getOption(Global.mouseHelper.getCurrentMousePosition()) == 0)
+                    {
                         dialogEven = DialogEnum.NONE;
-                    dialogEven = DialogEnum.NONE;
-
-                    currentGameState = GameStateEnum.GAME_LOAD;
+                        currentGameState = GameStateEnum.GAME_LOAD;
+                    }
                 }
-                if (Global.keyboardHelper.isPressAnykey())
+
+                else if (Global.keyboardHelper.isPressAnykey() && t % 1 == 0)
                 {
-                     Keys k = Global.keyboardHelper.getKeyUp();
-                    playerName += k.ToString();
-                    inputDialog.setText(playerName);
+                    Keys k = Global.keyboardHelper.getKeyUp();
+                    if (k != Keys.NumLock)
+                    {
+                        playerName += k.ToString();
+                        inputDialog.setText(playerName);
+                    }
+
                 }
 
                 return;
@@ -249,8 +255,8 @@ namespace MiniGame
             #region game playing
             if (currentGameState == GameStateEnum.GAME_PLAYING)
             {
-                Global.playerPos.X = player.LogicX;
-                Global.playerPos.Y = player.LogicY;
+                //Global.playerPos.X = player.LogicX;
+                //Global.playerPos.Y = player.LogicY;
                 
 
                 if (Global.keyboardHelper.IsKeyPressed(Keys.A))
